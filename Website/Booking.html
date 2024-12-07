@@ -93,10 +93,30 @@
             height: 4px;
             border-radius: 2px;
         }
+        /* Initially hide the mobile menu off to the right */
+#mobile-menu {
+    transform: translateX(100%); /* Move the menu off-screen to the right */
+    transition: transform 0.3s ease-in-out; /* Smooth sliding effect */
+}
+
+/* When the menu is open, slide it in from the right */
+#mobile-menu.open {
+    transform: translateX(0); /* Move the menu to its normal position */
+}
+
+/* Close button styling */
+#mobile-menu .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header class="hidden md:block bg-white shadow-md sticky top-0 z-50 rounded-b-2xl">
         <nav class="container mx-auto px-6 py-1 flex justify-between items-center">
             <div class="flex items-center">
                 <img src="Assets/img/TULSI-LOGO.jpg" class="w-16 h-16">
@@ -120,21 +140,33 @@
                 </button>
             </div>
         </nav>
-    
-        <!-- Mobile Menu -->
-        <div class="hidden md:hidden" id="mobile-menu">
-            <div class="flex flex-col px-6 py-4 space-y-2 bg-white shadow-md">
-                <a href="#resources" class="text-gray-600 hover:text-gray-800 transition-colors">Resources</a>
-                <a href="#occasions" class="text-gray-600 hover:text-gray-800 transition-colors">Occasions</a>
-                <a href="#reviews" class="text-gray-600 hover:text-gray-800 transition-colors">Reviews</a>
-                <a href="#contact" class="text-gray-600 hover:text-gray-800 transition-colors">Contact</a>
-                <a href="#booking-sec" class="text-[#b64931] hover:transparent transition-colors bg-transparent px-3 py-1 rounded-full hover:border-b-0 hover:border-[#b64931]">
+    </header>
+    <header class="flex md:hidden justify-between items-center py-1 px-2 bg-transparent text-[#b64931]">
+       
+            <!-- Logo -->
+        <div class="flex items-center">
+            <img src="Assets/img/TULSI-LOGO.png" class="w-14 h-14">
+        </div>
+        
+        <!-- Hamburger Icon -->
+        <button id="menu-toggle" class="lg:hidden text-2xl">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+    <div id="sidebar" class="md:hidden sidebar sidebar-closed fixed top-0 right-0 w-3/4 h-full bg-[#b64931] bg-opacity-80 text-[#b64931] z-50">
+        <div class="flex justify-end p-4">
+            <button id="close-menu" class="text-white text-3xl">×</button>
+        </div>
+        <nav class="flex flex-col items-start mt-10 space-y-4 px-4">
+            <a href="#resources" class="bg-white p-2 px-4 w-full rounded transition-colors">Resources</a>
+                <a href="#occasions" class="bg-white p-2 px-4  w-full rounded transition-colors">Occasions</a>
+                <a href="#reviews" class="bg-white p-2 px-4   w-full rounded transition-colors">Reviews</a>
+                <a href="#contact" class=" bg-white p-2 px-4  w-full rounded transition-colors">Contact</a>
+                <a href="#booking-sec" class="bg-white p-2 px-4  w-full rounded hover:transparent transition-colors">
                     Book for Event
                 </a>
-            </div>
-        </div>
-    </header>
-    
+        </nav>
+    </div>
     <script>
         // JavaScript for hamburger menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
@@ -647,7 +679,7 @@
 
         
         <section class="py-12 bg-gray-100 bg-[url('Assets/img/bg.jpg')] bg-opacity-10 bg-cover bg-center bg-opacity-5" id="reviews">
-        <div class="container mx-auto px-6 text-center ">
+        <div class="container mx-auto px-4 md:px-6 text-center ">
             <h2 class="text-3xl font-light text-white mb-8 text-start">Listen Our <span class="border-[#b64931] border-b-2 px-1 font-bold">Community Members</span></h2>
             <div class="swiper-container testimonial-carousel">
             <div class="swiper-wrapper">
@@ -1340,31 +1372,20 @@
         </div>
         
     </div>
-    <script>
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.classList.toggle('open');
-    
-    // Change the icon to close button when the menu is open
-    const buttonIcon = this.querySelector('i');
-    if (mobileMenu.classList.contains('open')) {
-        buttonIcon.classList.remove('fa-bars');
-        buttonIcon.classList.add('fa-times');
-    } else {
-        buttonIcon.classList.remove('fa-times');
-        buttonIcon.classList.add('fa-bars');
-    }
-});
+     <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const closeMenu = document.getElementById('close-menu');
 
-        // Optional: Close the menu if you click the close button (X)
-        document.querySelector('#mobile-menu .close-btn')?.addEventListener('click', function() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.classList.remove('open');
-    const buttonIcon = document.querySelector('#mobile-menu-button i');
-    buttonIcon.classList.remove('fa-times');
-    buttonIcon.classList.add('fa-bars');
-});
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('sidebar-closed');
+            sidebar.classList.toggle('sidebar-open');
+        });
 
+        closeMenu.addEventListener('click', () => {
+            sidebar.classList.toggle('sidebar-closed');
+            sidebar.classList.toggle('sidebar-open');
+        });
     </script>
 </body>
 </html>
