@@ -220,39 +220,40 @@
 
         <section 
         x-data="{
-        currentSlide: 0,
-        slides: ['Assets/img/Banners/mobile/1.png', 'Assets/img/Banners/mobile/2.png', 'Assets/img/Banners/mobile/3.png'],
-        previousSlide() { this.currentSlide = this.currentSlide === 0 ? this.slides.length - 1 : this.currentSlide - 1; },
-        nextSlide() { this.currentSlide = this.currentSlide === this.slides.length - 1 ? 0 : this.currentSlide + 1; }
+            currentSlide: 0,
+            slides: ['Assets/img/Banners/mobile/1.png', 'Assets/img/Banners/mobile/2.png', 'Assets/img/Banners/mobile/3.png'],
+            previousSlide() { this.currentSlide = this.currentSlide === 0 ? this.slides.length - 1 : this.currentSlide - 1; },
+            nextSlide() { this.currentSlide = this.currentSlide === this.slides.length - 1 ? 0 : this.currentSlide + 1; }
         }"
         x-init="setInterval(() => nextSlide(), 10000)"
-        class="relative overflow-hidden block md:hidden w-full h-[500px]" 
-        >
+        class="relative overflow-hidden block md:hidden w-full h-[550px]"
+    >
         <!-- Carousel -->
-    <template x-for="(slide, index) in slides" :key="index">
-        <div
-            x-show="currentSlide === index"
-            x-transition:enter="transition duration-1000 transform ease-out"
-            x-transition:enter-start="scale-90 opacity-0"
-            x-transition:enter-end="scale-100 opacity-100"
-            x-transition:leave="transition duration-1000 transform ease-in"
-            x-transition:leave-start="scale-100 opacity-100"
-            x-transition:leave-end="scale-90 opacity-0"
-            class="absolute inset-0"
-        >
-            <img :src="slide" class="w-full h-full object-contain"> <!-- Use object-cover to fill the screen -->
-        </div>
-    </template>
-    <div class="absolute inset-0 bg-black opacity-0"></div>
-
-    <!-- Indicators -->
-    <div class="absolute right-6 bottom-0 flex flex-row gap-4 space-x-2 py-5">
         <template x-for="(slide, index) in slides" :key="index">
-            <button @click="currentSlide = index" :class="currentSlide === index ? 'bg-[#b64931] border-2 border-white scale-115' : 'bg-gray-400'" class="w-7 h-2 rounded"></button>
+            <div
+                x-show="currentSlide === index"
+                x-transition:enter="transition duration-1000 transform ease-out"
+                x-transition:enter-start="scale-90 opacity-0"
+                x-transition:enter-end="scale-100 opacity-100"
+                x-transition:leave="transition duration-1000 transform ease-in"
+                x-transition:leave-start="scale-100 opacity-100"
+                x-transition:leave-end="scale-90 opacity-0"
+                class="absolute inset-0"
+            >
+                <img :src="slide" class="w-full h-full object-cover"> <!-- Use object-cover to fill the container -->
+            </div>
         </template>
-    </div>
+    
+        <div class="absolute inset-0 bg-black opacity-0"></div>
+    
+        <!-- Indicators -->
+        <div class="absolute right-6 bottom-0 flex flex-row gap-4 space-x-2 py-5">
+            <template x-for="(slide, index) in slides" :key="index">
+                <button @click="currentSlide = index" :class="currentSlide === index ? 'bg-[#b64931] border-2 border-white scale-115' : 'bg-gray-400'" class="w-7 h-2 rounded"></button>
+            </template>
+        </div>
         </section>
-
+    
 
         <section class="features py-10" id="resources">
             <div class="container mx-auto px-1 md:px-6">
@@ -1339,5 +1340,31 @@
         </div>
         
     </div>
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('open');
+    
+    // Change the icon to close button when the menu is open
+    const buttonIcon = this.querySelector('i');
+    if (mobileMenu.classList.contains('open')) {
+        buttonIcon.classList.remove('fa-bars');
+        buttonIcon.classList.add('fa-times');
+    } else {
+        buttonIcon.classList.remove('fa-times');
+        buttonIcon.classList.add('fa-bars');
+    }
+});
+
+        // Optional: Close the menu if you click the close button (X)
+        document.querySelector('#mobile-menu .close-btn')?.addEventListener('click', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.remove('open');
+    const buttonIcon = document.querySelector('#mobile-menu-button i');
+    buttonIcon.classList.remove('fa-times');
+    buttonIcon.classList.add('fa-bars');
+});
+
+    </script>
 </body>
 </html>

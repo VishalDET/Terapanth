@@ -103,3 +103,22 @@ width: 100%;
 
 
 
+/* Initially hide the mobile menu */
+#mobile-menu {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out; /* Smooth sliding */
+}
+
+/* Show the menu when the class is active */
+#mobile-menu.open {
+    transform: translateX(0); /* Slide in from the left */
+}
+
+/* Close button styling */
+#mobile-menu .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
