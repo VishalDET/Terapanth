@@ -97,7 +97,9 @@ header a:hover::after {
 width: 100%;
 }
 
-
+.font-semibold {
+    font-weight: 500;
+}
 
 
 
