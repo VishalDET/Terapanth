@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terapanth Bhavan - Resources</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Assets/favicon-Tera/favicon.ico">
+    <link rel="stylesheet" href="Assets/css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'rgb(179, 74, 54)',
+                        secondary: 'rgb(179, 74, 54)',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        .swiper-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .swiper-pagination {
+            position: absolute;
+            z-index: 10;
+        }
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            display: inline-block;
+            background: #fff;
+            opacity: 0.5;
+            margin: 0 4px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #b64931;
+        }
+
+        @media (max-width: 768px) {
+            .swiper-button-next, .swiper-button-prev {
+                display: none;
+            }
+            html,body {
+                padding: 0;
+                margin: 0;
+                overflow-x: hidden;
+            }
+            .container {
+                width: 100%;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .text-3xl {
+                font-size: 1.75rem;
+            }
+            .text-xl {
+                font-size: 1.25rem;
+            }
+            .py-10 {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+        }
+        .bg-tera{
+            background: rgb(182,73,49,0.01);
+        }
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 25px !important;
+            color: #b64931;
+        }
+       
+        .swiper-pagination-bullet{
+            width: 20px;
+            height: 4px;
+            border-radius: 2px;
+        }
+
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-1 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="Assets/img/TULSI-LOGO.jpg" class="w-16 h-16">
+                <!-- <div class="text-2xl font-bold text-gray-800">Terapanth Bhavan</div> -->
+            </div>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors">Home</a>
+                <div class="relative">
+                    <button class="text-gray-600 hover:text-gray-800 focus:outline-none flex items-center" id="about-menu-button">
+                        About
+                        <i class="fas fa-chevron-down ml-2 transition-transform transform" id="about-arrow"></i>
+                    </button>
+                    <div class="absolute hidden bg-white shadow-lg mt-2 py-2 rounded-md transition-opacity duration-200" id="about-dropdown">
+                        <a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Our Story</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Mission & Vision</a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <button class="text-gray-600 hover:text-gray-800 focus:outline-none flex items-center" id="initiatives-menu-button">
+                        Our Initiatives
+                        <i class="fas fa-chevron-down ml-2 transition-transform transform" id="initiatives-arrow"></i>
+                    </button>
+                    <div class="absolute hidden bg-white shadow-lg mt-2 py-2 rounded-md transition-opacity duration-200" id="initiatives-dropdown">
+                        <a href="Initiative.html#Education" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Education</a>
+                        <a href="Initiative.html#Hospitals" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Hospitals</a>
+                        <a href="Initiative.html#Environment" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Environment</a>
+                        <a href="Initiative.html#Camps" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Health Camps</a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <button class="text-gray-600 hover:text-gray-800 focus:outline-none flex items-center" id="associates-menu-button">
+                        Our Associates
+                        <i class="fas fa-chevron-down ml-2 transition-transform transform" id="associates-arrow"></i>
+                    </button>
+                    <div class="absolute hidden bg-white shadow-lg mt-2 py-2 rounded-md transition-opacity duration-200" id="associates-dropdown">
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Mangal Credit & Fincorp</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Individuals</a>
+                    </div>
+                </div>
+                <a href="Gallary.html" class="text-gray-600 hover:text-gray-800 transition-colors">Gallery</a>
+                <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors">Contact</a>
+                <a href="Booking.html" 
+                class="text-[#b64931]  hover:transparent transition-colors bg-transparent px-3 py-1 rounded-full hover:border-b-0 hover:border-[#b64931]">
+                Book for Event
+                </a>
+                         </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button class="text-gray-600 hover:text-gray-800 focus:outline-none" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="flex flex-col px-6 py-4 space-y-2 bg-white shadow-md">
+                <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-2 rounded">Home</a>
+                <button class="w-full text-left text-gray-800 hover:bg-gray-100 px-4 py-2 rounded" id="about-mobile-menu">
+                    About
+                    <i class="fas fa-chevron-down ml-1 transition-transform transform" id="about-mobile-arrow"></i>
+                </button>
+                <div class="hidden flex-col bg-gray-50 ml-4 pl-4 py-2 space-y-1" id="about-mobile-dropdown">
+                    <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-1">Our Story</a>
+                    <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-1">Mission & Vision</a>
+                </div>
+                <button class="w-full text-left text-gray-800 hover:bg-gray-100 px-4 py-2 rounded" id="initiatives-mobile-menu">
+                    Our Initiatives
+                    <i class="fas fa-chevron-down ml-1 transition-transform transform" id="initiatives-mobile-arrow"></i>
+                </button>
+                <div class="hidden flex-col bg-gray-50 ml-4 pl-4 py-2 space-y-1" id="initiatives-mobile-dropdown">
+                    <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-1">Initiative 1</a>
+                    <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-1">Initiative 2</a>
+                </div>
+                <button class="w-full text-left text-gray-800 hover:bg-gray-100 px-4 py-2 rounded" id="associates-mobile-menu">
+                    Our Associates
+                    <i class="fas fa-chevron-down ml-1 transition-transform transform" id="associates-mobile-arrow"></i>
+                </button>
+                <div class="hidden flex-col bg-gray-50 ml-4 pl-4 py-2 space-y-1" id="associates-mobile-dropdown">
+                    <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-1">Associate 1</a>
+                    <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-1">Associate 2</a>
+                </div>
+                <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-2 rounded">Gallery</a>
+                <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-2 rounded">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- <section class="hero bg-[url('https://media.weddingz.in/photologue/images/g-a-kulkarni-banquet-khar-west-mumbai.jpg')] bg-cover bg-center text-white py-40 relative">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="container mx-auto px-6 flex flex-col sm:flex-row justify-between items-center relative z-10">
+                <div class="w-full sm:w-2/3 text-center sm:text-left mb-8 sm:mb-0" data-aos="fade-right">
+                    <h1 class="text-3xl sm:text-4xl font-bold mb-2">Welcome to Terapanth Bhavan</h1>
+                    <p class="text-lg sm:text-xl mb-6 sm:mb-8">Shri Tulsi Mahapragya Foundation</p>
+                    <a href="#" class="bg-[#b64931] text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300 inline-block">Explore More</a>
+                </div>
+                <div class="w-full sm:w-1/3" data-aos="fade-left">
+                    <form class="bg-white p-6 rounded-lg shadow-md max-w-md mx-auto">
+                        <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Book Your Event</h2>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b64931]" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b64931]" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="event-date" class="block text-gray-700 text-sm font-bold mb-2">Event Date</label>
+                            <input type="date" id="event-date" name="event-date" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b64931]" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-[#b64931] text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300 w-full sm:w-auto">Submit Booking</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section> -->
+        <section 
+    x-data="{
+        currentSlide: 0,
+        slides: ['Assets/img/Banners/Terapanth Bhavan.png', 'Assets/img/Banners/Terapanth Bhavan-2.png', 'Assets/img/AD4.jpg'],
+        previousSlide() { this.currentSlide = this.currentSlide === 0 ? this.slides.length - 1 : this.currentSlide - 1; },
+        nextSlide() { this.currentSlide = this.currentSlide === this.slides.length - 1 ? 0 : this.currentSlide + 1; }
+    }"
+    x-init="setInterval(() => nextSlide(), 10000)"
+    class="relative h-[750px] overflow-hidden"
+>
+    <!-- Carousel -->
+    <template x-for="(slide, index) in slides" :key="index">
+        <div
+            x-show="currentSlide === index"
+            x-transition:enter="transition duration-1000 transform ease-out"
+            x-transition:enter-start="scale-90 opacity-0"
+            x-transition:enter-end="scale-100 opacity-100"
+            x-transition:leave="transition duration-1000 transform ease-in"
+            x-transition:leave-start="scale-100 opacity-100"
+            x-transition:leave-end="scale-90 opacity-0"
+            class="absolute inset-0"
+        >
+            <img :src="slide" class="w-full h-full object-cover">
+        </div>
+    </template>
+    <div class="absolute inset-0 bg-black opacity-0"></div>
+
+    <!-- Indicators -->
+    <div class="absolute right-6 bottom-0 flex flex-row gap-4 space-x-2 py-5">
+        <template x-for="(slide, index) in slides" :key="index">
+            <button @click="currentSlide = index" :class="currentSlide === index ? 'bg-[#b64931] border-2 border-white scale-115' : 'bg-gray-400'" class="w-7 h-2 rounded"></button>
+        </template>
+    </div>
+
+    <!-- Content -->
+    <!-- <div class="container mx-auto px-6 h-full relative z-10 flex flex-col sm:flex-row justify-between items-center py-10">
+        <div class="w-full sm:w-2/3 text-white text-center sm:text-left mb-8 sm:mb-0">
+            <h1 class="text-3xl sm:text-4xl font-bold">Welcome to Terapanth Bhavan</h1>
+            <p class="text-lg sm:text-xl mb-6">Shri Tulsi Mahapragya Foundation</p>
+            <a href="#" class="bg-[#b64931] text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90">Explore More</a>
+        </div>
+    </div> -->
+        </section>
+
+        <!-- <section class="features py-10">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8" data-aos="fade-up">Our Resources</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <img src="Assets/img/L1.jpg" alt="Library" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Library</h3>
+                            <p class="text-gray-600">Access our extensive collection of spiritual and educational books.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <img src="Assets/img/AD2.jpg" alt="Community Hall" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Community Hall</h3>
+                            <p class="text-gray-600">A spacious venue for gatherings, events, and celebrations.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                        <img src="Assets/img/H1.jpg" alt="Meditation Room" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Meditation Room</h3>
+                            <p class="text-gray-600">A peaceful space for reflection and spiritual practices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <section class="about-us py-10 bg-tera" id="about">
+            <div class="container mx-auto px-6">
+                <!-- <h2 class="text-3xl font-bold text-start text-[#b64931] mb-12" data-aos="fade-up">About Us</h2> -->
+                <div class="flex flex-col md:flex-row items-start justify-between md:pt-10">
+                    <div class="relative w-full md:w-1/2 mb-8 md:mb-0" >
+                        <img src="Assets/img/Terapanth-Bhawan-Kandivali.jpg" alt="Overlay Image" 
+                             class="w-[70%] h-auto shadow-xl border-b-[5px] border-l-[5px] border-[#b64931] "data-aos="fade-right">
+                    
+                        <img src="Assets/img/AD3.jpg" alt="Overlay Image" 
+                             class="absolute top-32 left-48 w-[70%] h-auto shadow-lg border-b-[5px] border-r-[5px]  border-[#b64931] "data-aos="fade-left">
+                    </div>
+                    
+                    <div class="w-full md:w-1/2 md:pl-12 items-center" >
+                        <div class="mb-6" data-aos="fade-down">
+                            <h3 class="text-2xl font-semibold text-[#b64931] mb-3">Terapanth Bhavan</h3>
+                            <p class="text-gray-600 leading-relaxed text-xl">
+                                Terapanth Bhavan is a spiritual and cultural center dedicated to promoting the teachings and principles of Terapanth, a Jain sect. It serves as a hub for community gatherings, religious ceremonies, and educational programs, fostering spiritual growth and social harmony among its members.
+                            </p>
+                            <a href="About-us.html" target="_blank" class="mt-4">Read more about us .. <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                        <!-- <div data-aos="fade-up">
+                            <h3 class="text-2xl font-semibold text-[#b64931] mb-3">Shri Tulsi Mahapragya Foundation</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                The Shri Tulsi Mahapragya Foundation is a non-profit organization committed to spreading the wisdom and teachings of Acharya Tulsi and Acharya Mahapragya. Through various initiatives in education, health, and social welfare, the foundation strives to create a positive impact on society, embodying the principles of non-violence, compassion, and self-realization.
+                            </p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="features py-10" id="resources">
+            <div class="container mx-auto px-0 md:px-6">
+                <h2 class="text-3xl text-start text-gray-800 font-light mb-8" data-aos="fade-up">Our <span class="border-[#b64931] font-bold border-b-2 px-1">Resources</span></h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <!-- Library Card -->
+                    <!-- <div class="bg-white rounded-lg overflow-hidden relative" data-aos="fade-up" data-aos-delay="100">
+                        <div class="swiper-container library-carousel">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="Assets/img/L1.jpg" alt="Library Image 1" class="w-full h-48 object-cover">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="Assets/img/L2.jpg" alt="Library Image 2" class="w-full h-48 object-cover">
+                                </div>
+                                <!-- <div class="swiper-slide">
+                                    <img src="Assets/img/L3.jpg" alt="Library Image 3" class="w-full h-48 object-cover">
+                                </div> 
+                            </div>
+                            <div class="swiper-pagination library-pagination !bottom-2 !left-0 !right-0 !w-full"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl  mb-2">Library</h3>
+                            <p class="text-gray-600">Access our extensive collection of spiritual and educational books.</p>
+                        </div>
+                    </div> -->
+                    <!-- Community Hall Card -->
+                    <div class="bg-white rounded-lg overflow-hidden relative" data-aos="fade-up" data-aos-delay="200">
+                        <div class="swiper-container community-carousel">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="Assets/img/AD2.jpg" alt="Community Hall Image 1" class="w-full h-96 object-cover">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="Assets/img/AD3.jpg" alt="Community Hall Image 2" class="w-full h-96 object-cover">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="Assets/img/AD4.jpg" alt="Community Hall Image 3" class="w-full h-96 object-cover">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="Assets/img/H1.jpg" alt="Meditation Room Image 1" class="w-full h-96 object-cover">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="Assets/img/H2.jpg" alt="Meditation Room Image 2" class="w-full h-96 object-cover">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="Assets/img/H3.jpg" alt="Meditation Room Image 3" class="w-full h-96 object-cover">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination community-pagination !bottom-2 !left-0 !right-0 !w-full"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl  mb-2">Halls & Auditorium</h3>
+                            <p class="text-gray-600">A spacious venue for gatherings, events, and celebrations.</p>
+                        </div>
+                    </div>
+                    <!-- Meditation Room Card -->
+                    <div class="bg-white rounded-lg overflow-hidden relative" data-aos="fade-up" data-aos-delay="300">
+                        <div class="swiper-container meditation-carousel">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="Assets/img/DOM/BDRM-1.jpeg" alt="Meditation Room Image 1" class="w-full h-96 object-cover">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="Assets/img/DOM/BDRM-2.jpeg" alt="Meditation Room Image 2" class="w-full h-96 object-cover">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="Assets/img/DOM/BDRM-4.jpeg" alt="Meditation Room Image 3" class="w-full h-96 object-cover">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="Assets/img/DOM/DOM-1.jpeg" alt="Meditation Room Image 3" class="w-full h-96 object-cover">
+                                </div>
+                                
+
+                            </div>
+                            <div class="swiper-pagination meditation-pagination !bottom-2 !left-0 !right-0 !w-full"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl  mb-2">Rooms & Dormitory</h3>
+                            <p class="text-gray-600">A peaceful place where your quests can rest.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const swiperConfig = {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    loop: true,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        clickable: true,
+                        renderBullet: function (index, className) {
+                            return '<span class="' + className + '"></span>';
+                        },
+                    },
+                    effect: 'fade',
+                    fadeEffect: {
+                        crossFade: true
+                    }
+                };
+        
+                // Initialize Swiper for Library Carousel
+                new Swiper('.library-carousel', {
+                    ...swiperConfig,
+                    pagination: {
+                        ...swiperConfig.pagination,
+                        el: '.library-pagination',
+                    }
+                });
+        
+                // Initialize Swiper for Community Hall Carousel
+                new Swiper('.community-carousel', {
+                    ...swiperConfig,
+                    pagination: {
+                        ...swiperConfig.pagination,
+                        el: '.community-pagination',
+                    }
+                });
+        
+                // Initialize Swiper for Meditation Room Carousel
+                new Swiper('.meditation-carousel', {
+                    ...swiperConfig,
+                    pagination: {
+                        ...swiperConfig.pagination,
+                        el: '.meditation-pagination',
+                    }
+                });
+            });
+        </script>
+
+
+        <section class="mission-vision py-20 bg-[url('Assets/img/bg.jpg')] bg-fixed bg-cover bg-center bg-no-repeat">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl text-start text-white mb-8" data-aos="fade-up">Venue<span class="border-[#b64931] border-b-2 px-1 font-bold"> Features & Policies</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-100 rounded-lg p-6 flex items-start" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-chair text-3xl text-[#b64931] mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Seating Type</h3>
+                            <p class="text-gray-600">Indoor Seating</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6 flex items-start" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-paint-brush text-3xl text-[#b64931] mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Decorator</h3>
+                            <p class="text-gray-600">Outside Decor Permitted</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6 flex items-start" data-aos="fade-up" data-aos-delay="300">
+                        <img src="Assets/img/icons8-no-alcohol-60.png" class="w-10 mr-3">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Alcohol</h3>
+                            <p class="text-gray-600">In House Alcohol Not Available</p>
+                            <p class="text-gray-600">Outside Alcohol Not Permitted</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-100 rounded-lg p-6 flex items-start" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-utensils text-3xl text-[#b64931] mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Food & Drinks</h3>
+                            <p class="text-gray-600">Outside Caterer Allowed</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6 flex items-start" data-aos="fade-up" data-aos-delay="500">
+                        <img src="Assets/img/icons8-no-music-50.png" class="w-10 mr-3">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">DJ Policy</h3>
+                            <p class="text-gray-600">DJ Not Allowed</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6 flex items-start" data-aos="fade-up" data-aos-delay="600">
+                        <i class="fas fa-wheelchair text-4xl text-[#b64931] mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Amenities</h3>
+                            <p class="text-gray-600">Wheel Chair Accessible In Car Parking</p>
+                            <p class="text-gray-600">Wheel Chair Accessible Entrance And Exit</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const swiperConfig = {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    loop: true,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        clickable: true,
+                        renderBullet: function (index, className) {
+                            return '<span class="' + className + '"></span>';
+                        },
+                    },
+                    effect: 'fade',
+                    fadeEffect: {
+                        crossFade: true
+                    }
+                };
+        
+                // Initialize Swiper for Library Carousel
+                new Swiper('.library-carousel', {
+                    ...swiperConfig,
+                    pagination: {
+                        ...swiperConfig.pagination,
+                        el: '.library-pagination',
+                    }
+                });
+        
+                // Initialize Swiper for Community Hall Carousel
+                new Swiper('.community-carousel', {
+                    ...swiperConfig,
+                    pagination: {
+                        ...swiperConfig.pagination,
+                        el: '.community-pagination',
+                    }
+                });
+        
+                // Initialize Swiper for Meditation Room Carousel
+                new Swiper('.meditation-carousel', {
+                    ...swiperConfig,
+                    pagination: {
+                        ...swiperConfig.pagination,
+                        el: '.meditation-pagination',
+                    }
+                });
+            });
+        </script>
+
+        <section class="occasions py-10 bg-gray-100 hidden md:block" id="occasions">
+    <div class="container mx-auto px-2 md:px-6">
+    <h2 class="text-3xl text-start text-gray-800 mb-8" data-aos="fade-up">Suitable for Various <span class="border-[#b64931] border-b-2 px-1 font-bold">Occasions</span></h2>
+    <div class="swiper occasions-carousel">
+        <div class="swiper-wrapper pb-10">
+            <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="Assets/img/marriage.jpg" alt="Wedding Event" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Wedding Event</h3>
+                    <p class="text-gray-600">Celebrate your special day in special style.</p>
+                </div>
+            </div>
+            <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="Assets/img/pre-wed.jpeg" alt="Pre Wedding Event" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Pre Wedding Event</h3>
+                    <p class="text-gray-600">Perfect for all your pre-wedding celebrations.</p>
+                </div>
+            </div>
+            <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="Assets/img/shooting.jpg" alt="Shooting" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Shooting</h3>
+                    <p class="text-gray-600">Ideal location for your photography sessions.</p>
+                </div>
+            </div>
+            <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="Assets/img/birthday.jpg" alt="Birthday Party" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Birthday Party</h3>
+                    <p class="text-gray-600">Make your birthday unforgettable with us.</p>
+                </div>
+            </div>
+            <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="Assets/img/dance.jpg" alt="Dance Shows" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Dance Shows</h3>
+                    <p class="text-gray-600">Host your dance performances in our venue.</p>
+                </div>
+            </div>
+            <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="Assets/img/gettogether.jpg" alt="Social Get Together" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Social Get Together</h3>
+                    <p class="text-gray-600">Gather your friends and family for a great time.</p>
+                </div>
+            </div>
+            <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="Assets/img/orientation.jpg" alt="School and Classes Orientation" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">School and Classes Orientation</h3>
+                    <p class="text-gray-600">Welcome students and parents to a new beginning.</p>
+                </div>
+            </div>
+            <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="Assets/img/meeting.jpg" alt="Meetings" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Meetings</h3>
+                    <p class="text-gray-600">Professional space for your business meetings.</p>
+                </div>
+            </div>
+            <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="Assets/img/prayer.jpg" alt="Prayer Meeting" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Prayer Meeting</h3>
+                    <p class="text-gray-600">A serene environment for your spiritual gatherings.</p>
+                </div>
+            </div>
+            <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="Assets/img/exibition.jpg" alt="Exhibition" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Exhibition</h3>
+                    <p class="text-gray-600">Showcase your work in a vibrant setting.</p>
+                </div>
+            </div>
+            <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="Assets/img/seminar.jpg" alt="Seminars" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Seminars</h3>
+                    <p class="text-gray-600">Engage in insightful discussions and learning.</p>
+                </div>
+            </div>
+            <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="Assets/img/theater.jpg" alt="Small Theater Play" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Small Theater Play</h3>
+                    <p class="text-gray-600">A cozy venue for your theatrical performances.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    </div>
+        </section>
+    
+        <section class="occasions py-10 bg-gray-100 flex md:hidden">
+            <div class="container mx-auto px-2 md:px-6">
+            <h2 class="text-3xl text-start text-gray-800 font-light mb-8" data-aos="fade-up">Suitable for Various <span class="border-[#b64931] font-bold border-b-2 px-1">Occasions</span></h2>
+            <div class="swiper occasions-carousel pb-8">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="Assets/img/marriage.jpg" alt="Wedding Event" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Wedding Event</h3>
+                            <p class="text-gray-600">Celebrate your special day in special style.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="Assets/img/pre-wed.jpeg" alt="Pre Wedding Event" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Pre Wedding Event</h3>
+                            <p class="text-gray-600">Perfect for all your pre-wedding celebrations.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="Assets/img/shooting.jpg" alt="Shooting" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Shooting</h3>
+                            <p class="text-gray-600">Ideal location for your photography sessions.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="Assets/img/birthday.jpg" alt="Birthday Party" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Birthday Party</h3>
+                            <p class="text-gray-600">Make your birthday unforgettable with us.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="Assets/img/dance.jpg" alt="Dance Shows" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Dance Shows</h3>
+                            <p class="text-gray-600">Host your dance performances in our venue.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="Assets/img/gettogether.jpg" alt="Social Get Together" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Social Get Together</h3>
+                            <p class="text-gray-600">Gather your friends and family for a great time.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="Assets/img/orientation.jpg" alt="School and Classes Orientation" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">School and Classes Orientation</h3>
+                            <p class="text-gray-600">Welcome students and parents to a new beginning.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="Assets/img/meeting.jpg" alt="Meetings" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Meetings</h3>
+                            <p class="text-gray-600">Professional space for your business meetings.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="Assets/img/prayer.jpg" alt="Prayer Meeting" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Prayer Meeting</h3>
+                            <p class="text-gray-600">A serene environment for your spiritual gatherings.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="Assets/img/exibition.jpg" alt="Exhibition" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Exhibition</h3>
+                            <p class="text-gray-600">Showcase your work in a vibrant setting.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="Assets/img/seminar.jpg" alt="Seminars" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Seminars</h3>
+                            <p class="text-gray-600">Engage in insightful discussions and learning.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="Assets/img/theater.jpg" alt="Small Theater Play" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Small Theater Play</h3>
+                            <p class="text-gray-600">A cozy venue for your theatrical performances.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination pt-4" style="display: block; color: #b64931;"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next" style="display: block; color: #b64931;"></div>
+                <div class="swiper-button-prev" style="display: block; color: #b64931;"></div>
+            </div>
+        </div>
+        </section>
+
+   
+
+
+        
+        <!-- <section class="features py-10 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl text-start text-gray-800 mb-8" data-aos="fade-up">Venue<span class="border-[#b64931] border-b-2 px-1 font-bold"> Features & Policies</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-100 rounded-lg p-6 flex items-start" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-chair text-3xl text-[#b64931] mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Seating Type</h3>
+                            <p class="text-gray-600">Indoor Seating</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6 flex items-start" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-paint-brush text-3xl text-[#b64931] mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Decorator</h3>
+                            <p class="text-gray-600">Outside Decor Permitted</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6 flex items-start" data-aos="fade-up" data-aos-delay="300">
+                        <img src="Assets/img/icons8-no-alcohol-60.png" class="w-10 mr-3">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Alcohol</h3>
+                            <p class="text-gray-600">In House Alcohol Not Available</p>
+                            <p class="text-gray-600">Outside Alcohol Not Permitted</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-100 rounded-lg p-6 flex items-start" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-utensils text-3xl text-[#b64931] mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Food & Drinks</h3>
+                            <p class="text-gray-600">Outside Caterer Allowed</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6 flex items-start" data-aos="fade-up" data-aos-delay="500">
+                        <img src="Assets/img/icons8-no-music-50.png" class="w-10 mr-3">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">DJ Policy</h3>
+                            <p class="text-gray-600">DJ Not Allowed</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6 flex items-start" data-aos="fade-up" data-aos-delay="600">
+                        <i class="fas fa-wheelchair text-4xl text-[#b64931] mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Amenities</h3>
+                            <p class="text-gray-600">Wheel Chair Accessible In Car Parking</p>
+                            <p class="text-gray-600">Wheel Chair Accessible Entrance And Exit</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        
+        <section class="celebrities-at-terapanth py-10 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl text-start text-gray-800 mb-12" data-aos="fade-up"><span class="border-[#b64931] border-b-2 px-1 font-bold"><span class="border-[#b64931] border-b-2 px-1 font-bold">Celebrities</span></span> at Terapanth</h2>
+                <div x-data="{
+                    celebrities: [
+                        { name: 'Celebrity 1', image: 'Assets/img/Events/1 (18).jpeg' },
+                        { name: 'Celebrity 2', image: 'Assets/img/Events/1 (10).jpeg' },
+                        { name: 'Celebrity 3', image: 'Assets/img/Events/1 (12).jpeg' },
+                        { name: 'Celebrity 4', image: 'Assets/img/Events/1 (15).jpeg' },
+                        { name: 'Celebrity 5', image: 'Assets/img/Events/1 (06).jpeg' },
+                        { name: 'Celebrity 6', image: 'Assets/img/Events/1 (13).jpeg' }
+                    ],
+                    currentIndex: 0,
+                    isMobile: window.innerWidth < 768,
+                    next() {
+                        this.currentIndex = (this.currentIndex + (this.isMobile ? 1 : 2)) % this.celebrities.length;
+                    },
+                    prev() {
+                        this.currentIndex = (this.currentIndex - (this.isMobile ? 1 : 2) + this.celebrities.length) % this.celebrities.length;
+                    }
+                }" 
+                x-init="window.addEventListener('resize', () => { isMobile = window.innerWidth < 768; })"
+                class="relative">
+                    <div class="overflow-hidden rounded-lg shadow-xl bg-transparent" style="height: auto;">
+                        <div class="flex transition-transform duration-300 ease-in-out bg-transparent gap-3" 
+                             :style="{ transform: `translateX(-${currentIndex * (isMobile ? 100 : 50)}%)` }">
+                            <template x-for="(celebrity, index) in celebrities" :key="index">
+                                <div :class="{'w-full': isMobile, 'w-1/2': !isMobile}" class="flex-shrink-0 px-0 bg-transparent">
+                                    <div class="relative h-full">
+                                        <img :src="celebrity.image" :alt="celebrity.name" class="w-full h-full object-cover rounded-lg">
+                                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 rounded-b-lg ">
+                                            <h3 class="text-xl font-semibold" x-text="celebrity.name"></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="flex justify-end mt-6 space-x-4">
+                        <button @click="prev()" 
+                                class="bg-none text-[#b64931] text-4xl font-bold p-0 rounded-full hover:bg-opacity-80 transition duration-300">
+                                <i class="fa-solid fa-circle-arrow-left"></i>
+                        </button>
+                        <button @click="next()" 
+                                class="bg-none text-[#b64931] text-4xl font-bold p-0 rounded-full hover:bg-opacity-80 transition duration-300">
+                                <i class="fa-solid fa-circle-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="our-initiatives py-10 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl text-start text-gray-800 mb-12" data-aos="fade-up">Our <span class="border-[#b64931] border-b-2 px-1 font-bold">Initiatives</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Initiative 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="100">
+                        <img src="Assets/img/Csr/school/school-3.jpeg" alt="Building School in Rajasthan" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-[#b64931]">Building School in Rajasthan</h3>
+                            <p class="text-gray-600">Empowering rural communities through education, our new school project aims to provide quality learning opportunities.</p>
+                        </div>
+                    </div>
+                    <!-- Initiative 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+                        <img src="Assets/img/Csr/Health-Clinic/BhawanPic14.jpg" alt="Hospital Development" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-[#b64931]">Health Camps</h3>
+                            <p class="text-gray-600">Improving healthcare access with state-of-the-art medical facilities to serve our community's health needs.</p>
+                        </div>
+                    </div>
+                    <!-- Initiative 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="300">
+                        <img src="Assets/img/GT.jpg" alt="Community Centers" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-[#b64931]">Community Centers</h3>
+                            <p class="text-gray-600">Creating spaces for connection and growth, our community centers foster social bonds and cultural activities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="Initiative.html" class="inline-block bg-[#b64931] text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300">Learn More About Our Initiatives</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="impact-numbers py-10 bg-gradient-to-r from-gray-100 to-gray-200">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="w-full md:w-1/2 mb-12 md:mb-0" data-aos="fade-right">
+                        <h2 class="text-4xl text-gray-800 mb-6"><span class="border-[#b64931] border-b-2 px-1 font-bold">Our Impact</span> in Numbers</h2>
+                        <div class="relative">
+                            <img src="Assets/img/GT1.jpg" alt="Impact Numbers" class="w-full h-auto object-cover rounded-lg shadow-xl">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 rounded-lg"></div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-12" data-aos="fade-left">
+                        <p class="text-gray-600 mb-10 text-lg leading-relaxed">Our commitment to excellence and community service has led to significant achievements. We're proud of the positive impact we've made and the trust we've built with our community members.</p>
+
+                        <div class="grid grid-cols-2 gap-8">
+                            <div class="text-center p-6 bg-black rounded-lg shadow-md transition-all duration-300 hover:shadow-xl relative overflow-hidden">
+                                <img src="Assets/img/Events/1 (18).jpeg" alt="Events Background" class="absolute inset-0 w-full h-full object-cover opacity-50">
+                                <div class="relative z-10">
+                                    <h3 class="text-5xl font-bold text-[#b64931] mb-2">2000+</h3>
+                                    <p class="text-white text-lg">Community Members</p>
+                                </div>
+                            </div>
+                            <div class="text-center p-6 bg-black rounded-lg shadow-md transition-all duration-300 hover:shadow-xl relative overflow-hidden">
+                                <img src="Assets/img/Events/1 (16).jpeg" alt="Events Background" class="absolute inset-0 w-full h-full object-cover opacity-50">
+                                <div class="relative z-10">
+                                    <h3 class="text-5xl font-bold text-[#b64931] mb-2">100+</h3>
+                                    <p class="text-white text-lg">Events</p>
+                                </div>
+                            </div>
+                            <div class="text-center p-6 bg-black rounded-lg shadow-md transition-all duration-300 hover:shadow-xl relative overflow-hidden">
+                                <img src="Assets/img/Events/1 (16).jpeg" alt="Events Background" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                                <div class="relative z-10">
+                                    <h3 class="text-5xl font-bold text-[#b64931] mb-2">10+</h3>
+                                    <p class="text-white text-lg">Partners</p>
+                                </div>
+                            </div>
+                            <div class="text-center p-6 bg-black rounded-lg shadow-md transition-all duration-300 hover:shadow-xl relative overflow-hidden">
+                                <img src="Assets/img/Events/1 (16).jpeg" alt="Events Background" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                                <div class="relative z-10">
+                                <h3 class="text-5xl font-bold text-[#b64931] mb-2">300B</h3>
+                                <p class="text-white text-lg">Funds Managed</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 bg-gray-100 bg-[url('Assets/img/bg.jpg')] bg-opacity-10   
+        bg-cover bg-center bg-opacity-5">
+        <div class="container mx-auto px-6 text-center ">
+        <h2 class="text-3xl font-light text-white mb-8 text-start">Listen Our <span class="border-[#b64931] border-b-2 px-1 font-bold">Community Members</span></h2>
+        <div class="swiper-container testimonial-carousel">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide bg-white rounded-lg p-8 shadow-md flex flex-col justify-between h-full">
+                    <div class="text-start">
+                        <blockquote class="text-xl font-semibold mb-4">"Excellent place for events & gatherings"</blockquote>
+                        <p class="text-gray-600 mb-6">Terapanth Bhavan is a great place for organizing events. The hall is spacious and well-maintained. The staff is cooperative and helpful. Overall, it's an excellent venue for various functions.</p>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-user-circle text-4xl text-gray-400 mr-4"></i>
+                        <div>
+                            <h4 class="font-bold">Rahul Jain</h4>
+                            <p class="text-sm text-gray-500">Google Review</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide bg-white rounded-lg p-8 shadow-md flex flex-col justify-between h-full">
+                    <div class="text-start">
+                        <blockquote class="text-xl font-semibold mb-4">"Perfect venue for community events"</blockquote>
+                        <p class="text-gray-600 mb-6">Terapanth Bhavan is a wonderful place for community gatherings. The ambiance is peaceful, and the facilities are top-notch. It's a great asset for our local community.</p>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-user-circle text-4xl text-gray-400 mr-4"></i>
+                        <div>
+                            <h4 class="font-bold">Priya Sharma</h4>
+                            <p class="text-sm text-gray-500">Google Review</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide bg-white rounded-lg p-8 shadow-md flex flex-col justify-between h-full">
+                    <div class="text-start">
+                        <blockquote class="text-xl font-semibold mb-4">"Clean and well-maintained facility"</blockquote>
+                        <p class="text-gray-600 mb-6">I recently attended an event at Terapanth Bhavan and was impressed by how clean and well-maintained the facility is. The management takes great care of the place.</p>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-user-circle text-4xl text-gray-400 mr-4"></i>
+                        <div>
+                            <h4 class="font-bold">Amit Patel</h4>
+                            <p class="text-sm text-gray-500">Justdial Review</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="swiper-slide bg-white rounded-lg p-8 shadow-md flex flex-col justify-between h-full">
+                    <div class="text-start">
+                        <blockquote class="text-xl font-semibold mb-4">"Spacious and well-equipped"</blockquote>
+                        <p class="text-gray-600 mb-6">Terapanth Bhavan is a spacious and well-equipped venue. It's perfect for large gatherings and events. The audio-visual facilities are modern and the seating arrangement is comfortable.</p>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-user-circle text-4xl text-gray-400 mr-4"></i>
+                        <div>
+                            <h4 class="font-bold">Neha Gupta</h4>
+                            <p class="text-sm text-gray-500">Google Review</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="swiper-slide bg-white rounded-lg p-8 shadow-md flex flex-col justify-between h-full">
+                    <div class="text-start">
+                        <blockquote class="text-xl font-semibold mb-4">"Excellent location & parking facilities"</blockquote>
+                        <p class="text-gray-600 mb-6">One of the best things about Terapanth Bhavan is its location. easily accessible and has ample parking space, which is a big plus for any event in Mumbai.</p>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-user-circle text-4xl text-gray-400 mr-4"></i>
+                        <div>
+                            <h4 class="font-bold">Rajesh Mehta</h4>
+                            <p class="text-sm text-gray-500">Justdial Review</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Swiper navigation buttons -->
+            <div class="swiper-button-next bg-transparent p-2 rounded-full text-[#b64931] right-0"></div>
+            <div class="swiper-button-prev bg-transparent p-2 rounded-full text-[#b64931] left-0"></div>
+        </div>
+        </div>
+        </section>
+
+        <section class="rental-bookings py-10 bg-gray-100" id="rental-bookings">
+            <div class="container mx-auto md:px-6">
+                <h2 class="text-3xl font-bold text-start text-[#b64931] mb-8" data-aos="fade-up">Rental & Bookings</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div class="flex flex-col space-y-4">
+                        <div class="flex flex-col md:flex-row space-x-8 bg-white shadow-md rounded-tr-[1rem] rounded-br-[1rem]">
+                            <div class="bg-transparent rounded-lg p-6 w-full md:w-1/2" data-aos="fade-up">
+                                <h3 class="text-xl font-semibold mb-4">Hall Types</h3>
+                                <ul class="list-disc list-inside text-gray-600">
+                                    <li>1st Hall: Capacity of 1000</li>
+                                    <li>2nd Hall: Capacity of 150 to 200</li>
+                                    <li>3rd Hall: Dinning Capacity of 200 to 250</li>
+                                    <li>Auditorium: Capacity of 418</li>
+                                </ul>
+                            </div>
+                            <div 
+                                x-data="{
+                                    currentSlide: 0,
+                                    slides: ['Assets/img/H1.jpg', 'Assets/img/h2.jpg', 'Assets/img/h3.jpg'],
+                                    previousSlide() { this.currentSlide = this.currentSlide === 0 ? this.slides.length - 1 : this.currentSlide - 1; },
+                                    nextSlide() { this.currentSlide = this.currentSlide === this.slides.length - 1 ? 0 : this.currentSlide + 1; }
+                                }"
+                                x-init="setInterval(() => nextSlide(), 3000)"
+                                class="relative h-[250px] w-full md:w-1/2 overflow-hidden rounded-tr-[1rem] rounded-br-[1rem]"
+                            >
+                                <!-- Carousel -->
+                                <template x-for="(slide, index) in slides" :key="index">
+                                    <div
+                                        x-show="currentSlide === index"
+                                        x-transition:enter="transition duration-1000 transform ease-out"
+                                        x-transition:enter-start="scale-90 opacity-0"
+                                        x-transition:enter-end="scale-100 opacity-100"
+                                        x-transition:leave="transition duration-1000 transform ease-in"
+                                        x-transition:leave-start="scale-100 opacity-100"
+                                        x-transition:leave-end="scale-90 opacity-0"
+                                        class="absolute inset-0"
+                                    >
+                                        <img :src="slide" class="w-full h-full object-cover rounded-tr-[1rem] rounded-br-[1rem]">
+                                    </div>
+                                </template>
+                                <div class="absolute inset-0 bg-black opacity-20 rounded-tr-[1rem] rounded-br-[1rem]"></div>
+
+                                <!-- Indicators -->
+                                <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                                    <template x-for="(slide, index) in slides" :key="index">
+                                        <button @click="currentSlide = index" :class="currentSlide === index ? 'bg-[#ffffff] border-0 border-white scale-115' : 'bg-gray-400'" class="w-6 h-2 rounded p-0"></button>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row space-x-8 bg-white shadow-md rounded-tl-[1rem] rounded-bl-[1rem]">
+                            <div 
+                                x-data="{
+                                    currentSlide: 0,
+                                    slides: ['Assets/img/DOM/BDRM-1.jpeg', 'Assets/img/DOM/BDRM-2.jpeg', 'Assets/img/DOM/BDRM-3.jpeg','Assets/img/DOM/BDRM-4.jpeg', 'Assets/img/DOM/DOM-1.jpeg'],
+                                    previousSlide() { this.currentSlide = this.currentSlide === 0 ? this.slides.length - 1 : this.currentSlide - 1; },
+                                    nextSlide() { this.currentSlide = this.currentSlide === this.slides.length - 1 ? 0 : this.currentSlide + 1; }
+                                }"
+                                x-init="setInterval(() => nextSlide(), 3000)"
+                                class="relative h-[250px] w-full md:w-1/2 overflow-hidden rounded-tl-[1rem] rounded-bl-[1rem]"
+                            >
+                                <!-- Carousel -->
+                                <template x-for="(slide, index) in slides" :key="index">
+                                    <div
+                                        x-show="currentSlide === index"
+                                        x-transition:enter="transition duration-1000 transform ease-out"
+                                        x-transition:enter-start="scale-90 opacity-0"
+                                        x-transition:enter-end="scale-100 opacity-100"
+                                        x-transition:leave="transition duration-1000 transform ease-in"
+                                        x-transition:leave-start="scale-100 opacity-100"
+                                        x-transition:leave-end="scale-90 opacity-0"
+                                        class="absolute inset-0"
+                                    >
+                                        <img :src="slide" class="w-full h-full object-cover rounded-tl-[1rem] rounded-bl-[1rem]">
+                                    </div>
+                                </template>
+                                <div class="absolute inset-0 bg-black opacity-20 rounded-tl-[1rem] rounded-bl-[1rem]"></div>
+
+                                <!-- Indicators -->
+                                <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                                    <template x-for="(slide, index) in slides" :key="index">
+                                        <button @click="currentSlide = index" :class="currentSlide === index ? 'bg-[#ffffff] border-0 border-white scale-115' : 'bg-gray-400'" class="w-8 h-2 rounded p-1"></button>
+                                    </template>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-lg py-6" data-aos="fade-up">
+                                <h3 class="text-xl font-semibold mb-4">Room Types</h3>
+                                <ul class="list-disc list-inside text-gray-600">
+                                    <li>1st Room: Two beds</li>
+                                    <li>2nd Room: Three beds</li>
+                                    <li>Dormitory: Six beds</li>
+                                </ul>
+                                <div class="absolute bottom-4 right-4 ">
+                                    <button class="bg-[#b64931] text-white py-2 px-4 rounded-full" style="display: block;">
+                                        Explore More
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col bg-white rounded-lg shadow-md p-6" data-aos="fade-up">
+                        <h3 class="text-2xl font-bold text-start text-[#b64931] mb-4">Booking Process</h3>
+                        <p class="text-gray-600 mb-6">To book a hall or room, please fill out the form below with your details and preferred dates. Our team will get back to you shortly to confirm your booking.</p>
+                        <form>
+                            <div class="mb-4">
+                                <label for="renter-name" class="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
+                                <input type="text" id="renter-name" name="renter-name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b64931]" required>
+                            </div>
+                            <div class="mb-4 flex flex-col md:flex-row md:space-x-4">
+                                <div class="md:w-1/2">
+                                    <label for="renter-email" class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
+                                    <input type="email" id="renter-email" name="renter-email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b64931]" required>
+                                </div>
+                                <div class="md:w-1/2">
+                                    <label for="renter-phone" class="block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
+                                    <input type="tel" id="renter-phone" name="renter-phone" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b64931]" required>
+                                </div>
+                            </div>
+                            <div class="mb-4 flex flex-col md:flex-row md:space-x-4">
+                                <div class="md:w-1/2">
+                                    <label for="booking-date" class="block text-gray-700 text-sm font-bold mb-2">Booking Date</label>
+                                    <input type="date" id="booking-date" name="booking-date" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b64931]" required>
+                                </div>
+                                <div class="md:w-1/2">
+                                    <label for="hall-type" class="block text-gray-700 text-sm font-bold mb-2">Select Hall Type</label>
+                                    <select id="hall-type" name="hall-type" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b64931]" required>
+                                        <option value="">Choose a hall type</option>
+                                        <option value="hall-1000">1st Hall (1000 Capacity)</option>
+                                        <option value="hall-150-200">2nd Hall (150 to 200 Capacity)</option>
+                                        <option value="auditorium">Auditorium (418 Capacity)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="bg-[#b64931] text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300">Submit Booking</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section class="booking-form bg-gray2300 py-10">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-start text-gray-800 mb-8" data-aos="fade-up">Book For Event</h2>
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <form class="w-full md:w-1/2 lg:w-2/5 bg-white rounded-lg shadow-md p-6 mb-8 md:mb-0" data-aos="fade-right">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b64931]" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b64931]" required>
+                        </div>
+                        <div class="mb-4">
+                           
+                            <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b64931]" required>
+                        </div>
+                        <div class="mb-4">
+                            <div class="input-group flex space-x-4">
+                                <div class="w-1/2">
+                                    <label for="event-date" class="block text-gray-700 text-sm font-bold mb-2">Event Date</label>
+                                    <input type="date" id="event-date" name="event-date" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b64931]" required>
+                                </div>
+                                <div class="w-1/2">
+                                    <label for="event-type" class="block text-gray-700 text-sm font-bold mb-2">Event Type</label>
+                                    <select id="event-type" name="event-type" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b64931]" required>
+                                        <option value="">Select an event type</option>
+                                        <option value="wedding">Wedding</option>
+                                        <option value="birthday">Birthday</option>
+                                        <option value="corporate">Corporate Event</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="guests" class="block text-gray-700 text-sm font-bold mb-2">Number of Guests</label>
+                            <input type="number" id="guests" name="guests" min="1" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#b64931]" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-[#b64931] text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300">Submit Booking</button>
+                        </div>
+                    </form>
+                    <div class="w-full md:w-1/2 lg:w-1/2" data-aos="fade-left">
+                        <img src="https://content.jdmagicbox.com/v2/comp/mumbai/h7/022pxx22.xx22.180921202451.d2h7/catalogue/terapanth-bhavan-kandivali-east-mumbai-community-halls-pocd5j9ux3.jpg" alt="Terapanth Bhavan Event Space" class="w-full h-auto rounded-lg shadow-md">
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        
+       
+        <!-- <section id="vanta-waves" class="cta py-20 relative">
+            <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between">
+                <div class="text-center md:text-left md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+                    <h2 class="text-3xl font-bold text-white mb-4">Visit Us Today</h2>
+                    <p class="text-xl text-white mb-8">Experience the serenity and community at Terapanth Bhavan</p>
+                    <a href="#" class="bg-[#b64931] text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300 inline-block">Contact Us</a>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="relative">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.2176700206477!2d72.85659731490722!3d19.20984985259031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7025d2d0d8f%3A0x5a7eda2266210a13!2sTerapanth%20Bhavan!5e0!3m2!1sen!2sin!4v1623456789012!5m2!1sen!2sin" 
+                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg shadow-md"></iframe>
+                        <div class="mt-4 flex justify-between">
+                            <a href="https://goo.gl/maps/your-directions-link-here" target="_blank" class="bg-[#b64931] text-white py-2 px-4 rounded-full text-sm font-semibold hover:bg-opacity-90 transition duration-300"><i class="fa-solid fa-diamond-turn-right"></i> Get Directions</a>
+                            <a href="https://goo.gl/maps/your-view-on-map-link-here" target="_blank" class="bg-[#b64931] text-white py-2 px-4 rounded-full text-sm font-semibold hover:bg-opacity-90 transition duration-300"><i class="fa-solid fa-map-location-dot"></i> View on Map</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+     
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            // Initialize Swiper
+            var swiper = new Swiper('.occasions-carousel', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                },
+            });
+        </script>
+        <script>
+            VANTA.WAVES({
+              el: "#vanta-waves",
+              mouseControls: true,
+              touchControls: true,
+              gyroControls: false,
+              minHeight: 200.00,
+              minWidth: 200.00,
+              scale: 1.00,
+              scaleMobile: 1.00,
+              color: 0x706b6a,
+              shininess: 35.00,
+              
+            })
+            AOS.init({
+                duration: 1000 // Animation duration in milliseconds
+            });
+        </script>
+        <script>
+            // Initialize Swiper
+            var swiper = new Swiper('.testimonial-carousel', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                },
+            });
+        </script>
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Desktop dropdowns
+            const menuButtons = [
+                { button: 'about-menu-button', dropdown: 'about-dropdown', arrow: 'about-arrow' },
+                { button: 'initiatives-menu-button', dropdown: 'initiatives-dropdown', arrow: 'initiatives-arrow' },
+                { button: 'associates-menu-button', dropdown: 'associates-dropdown', arrow: 'associates-arrow' }
+            ];
+            menuButtons.forEach(({ button, dropdown, arrow }) => {
+                const menuButton = document.getElementById(button);
+                const menuDropdown = document.getElementById(dropdown);
+                const menuArrow = document.getElementById(arrow);
+    
+                menuButton.addEventListener('click', () => {
+                    menuDropdown.classList.toggle('hidden');
+                    menuArrow.classList.toggle('rotate-180');
+                });
+    
+                document.addEventListener('click', (event) => {
+                    if (!menuButton.contains(event.target) && !menuDropdown.contains(event.target)) {
+                        menuDropdown.classList.add('hidden');
+                        menuArrow.classList.remove('rotate-180');
+                    }
+                });
+            });
+    
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+    
+            // Mobile dropdowns
+            const mobileMenus = [
+                { button: 'about-mobile-menu', dropdown: 'about-mobile-dropdown', arrow: 'about-mobile-arrow' },
+                { button: 'initiatives-mobile-menu', dropdown: 'initiatives-mobile-dropdown', arrow: 'initiatives-mobile-arrow' },
+                { button: 'associates-mobile-menu', dropdown: 'associates-mobile-dropdown', arrow: 'associates-mobile-arrow' }
+            ];
+            mobileMenus.forEach(({ button, dropdown, arrow }) => {
+                const mobileButton = document.getElementById(button);
+                const mobileDropdown = document.getElementById(dropdown);
+                const mobileArrow = document.getElementById(arrow);
+    
+                mobileButton.addEventListener('click', () => {
+                    mobileDropdown.classList.toggle('hidden');
+                    mobileArrow.classList.toggle('rotate-180');
+                });
+            });
+        });
+    </script>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 py-8">
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold mb-4">About Us</h3>
+                    <img src="Assets/img/TULSI-LOGO.png" alt="Terapanth Bhavan Logo" class="w-32 h-auto mb-4">
+                    <p class="text-lg mb-0 pb-0">Terapanth Bhavan</p>
+                    <p class="text-sm mt-0 lh-[1rem]">Shri Tulsi Mahapragya Foundation</p>
+                    <p class="text-sm">Kandivali East, Mumbai</p>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold mb-4">Navigation</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-400 transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-gray-400 transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-gray-400 transition-colors">Services</a></li>
+                        <li><a href="#" class="hover:text-gray-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold mb-4">Useful Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-400 transition-colors">Banquet Halls in Mumbai</a></li>
+                        <li><a href="#" class="hover:text-gray-400 transition-colors">Marriage Hall in Mumbai</a></li>
+                        <li><a href="#" class="hover:text-gray-400 transition-colors">Event Spaces in Kandivali</a></li>
+                        <li><a href="#" class="hover:text-gray-400 transition-colors">Community Centers in Mumbai</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-gray-400 transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-gray-400 transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-2xl hover:text-gray-400 transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-2xl hover:text-gray-400 transition-colors"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </footer>
+    <div class="footer-bottom bg-[#b64931] ">
+        <div class=" container mx-auto p-2 text-center flex flex-col md:flex-row justify-between items-center">
+        <p class="text-sm  text-white">&copy; 2024 Shri Tulsi Mahapragya Foundation. All rights reserved.</p>
+
+        <p class="text-gray-300">Developed by <a href="https://www.digitaledgetechnologies.com/" target="_blank"><strong class="font-light text-white">Digital Edge Technologies </strong></a></p>
+        </div>
+        
+    </div>
+</body>
+</html>

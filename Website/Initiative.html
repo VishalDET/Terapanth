@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terapanth Bhavan - Resources</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#b64931',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        .swiper-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .swiper-pagination {
+            position: absolute;
+            z-index: 10;
+        }
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            display: inline-block;
+            background: #fff;
+            opacity: 0.5;
+            margin: 0 4px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #b64931;
+        }
+        /* Custom Scrollbar Styles */
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 2rem;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #b64931;
+            border-radius: 2rem;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b64931;
+        }
+
+        /* For Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #b64931 #f1f1f1;
+        }
+        a {
+    position: relative;
+    text-decoration: none; /* Optional: to remove default underline */
+    color: inherit; /* Optional: to inherit the text color */
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #b64931;
+    transition: width 0.5s ease-in-out;
+}
+
+a:hover::after {
+    width: 100%;
+}
+        @media (max-width: 768px) {
+            .swiper-button-next, .swiper-button-prev {
+                display: none;
+            }
+            html,body {
+                padding: 0;
+                margin: 0;
+                overflow-x: hidden;
+            }
+            .container {
+                width: 100%;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .text-3xl {
+                font-size: 1.75rem;
+            }
+            .text-xl {
+                font-size: 1.25rem;
+            }
+            .py-10 {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-1 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="Assets/img/TULSI-LOGO.jpg" class="w-16 h-16">
+                <!-- <div class="text-2xl font-bold text-gray-800">Terapanth Bhavan</div> -->
+            </div>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="Home.html" class="text-gray-600 hover:text-gray-800 transition-colors">Home</a>
+                <div class="relative">
+                    <button class="text-gray-600 hover:text-gray-800 focus:outline-none flex items-center" id="about-menu-button">
+                        About
+                        <i class="fas fa-chevron-down ml-2 transition-transform transform" id="about-arrow"></i>
+                    </button>
+                    <div class="absolute hidden bg-white shadow-lg mt-2 py-2 rounded-md transition-opacity duration-200" id="about-dropdown">
+                        <a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Our Story</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Mission & Vision</a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <button class="text-gray-600 hover:text-gray-800 focus:outline-none flex items-center" id="initiatives-menu-button">
+                        Our Initiatives
+                        <i class="fas fa-chevron-down ml-2 transition-transform transform" id="initiatives-arrow"></i>
+                    </button>
+                    <div class="absolute hidden bg-white shadow-lg mt-2 py-2 rounded-md transition-opacity duration-200" id="initiatives-dropdown">
+                        <a href="Initiative.html#Education" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Education</a>
+                        <a href="Initiative.html#Hospitals" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Hospitals</a>
+                        <a href="Initiative.html#Environment" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Environment</a>
+                        <a href="Initiative.html#Camps" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Health Camps</a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <button class="text-gray-600 hover:text-gray-800 focus:outline-none flex items-center" id="associates-menu-button">
+                        Our Associates
+                        <i class="fas fa-chevron-down ml-2 transition-transform transform" id="associates-arrow"></i>
+                    </button>
+                    <div class="absolute hidden bg-white shadow-lg mt-2 py-2 rounded-md transition-opacity duration-200" id="associates-dropdown">
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Mangal Credit & Fincorp</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Individuals</a>
+                    </div>
+                </div>
+                <a href="Gallary.html" class="text-gray-600 hover:text-gray-800 transition-colors">Gallery</a>
+                <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors">Contact</a>
+                <a href="#" 
+                class="text-[#b64931]  hover:transparent transition-colors bg-transparent px-3 py-1 rounded-full hover:border-b-0 hover:border-[#b64931]">
+                Book for Event
+                </a>
+                         </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button class="text-gray-600 hover:text-gray-800 focus:outline-none" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="flex flex-col px-6 py-4 space-y-2 bg-white shadow-md">
+                <a href="Home.html" class="block text-gray-800 hover:bg-gray-100 px-4 py-2 rounded">Home</a>
+                <button class="w-full text-left text-gray-800 hover:bg-gray-100 px-4 py-2 rounded" id="about-mobile-menu">
+                    About
+                    <i class="fas fa-chevron-down ml-1 transition-transform transform" id="about-mobile-arrow"></i>
+                </button>
+                <div class="hidden flex-col bg-gray-50 ml-4 pl-4 py-2 space-y-1" id="about-mobile-dropdown">
+                    <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-1">Our Story</a>
+                    <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-1">Mission & Vision</a>
+                </div>
+                <button class="w-full text-left text-gray-800 hover:bg-gray-100 px-4 py-2 rounded" id="initiatives-mobile-menu">
+                    Our Initiatives
+                    <i class="fas fa-chevron-down ml-1 transition-transform transform" id="initiatives-mobile-arrow"></i>
+                </button>
+                <div class="hidden flex-col bg-gray-50 ml-4 pl-4 py-2 space-y-1" id="initiatives-mobile-dropdown">
+                    <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-1">Initiative 1</a>
+                    <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-1">Initiative 2</a>
+                </div>
+                <button class="w-full text-left text-gray-800 hover:bg-gray-100 px-4 py-2 rounded" id="associates-mobile-menu">
+                    Our Associates
+                    <i class="fas fa-chevron-down ml-1 transition-transform transform" id="associates-mobile-arrow"></i>
+                </button>
+                <div class="hidden flex-col bg-gray-50 ml-4 pl-4 py-2 space-y-1" id="associates-mobile-dropdown">
+                    <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-1">Associate 1</a>
+                    <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-1">Associate 2</a>
+                </div>
+                <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-2 rounded">Gallery</a>
+                <a href="#" class="block text-gray-800 hover:bg-gray-100 px-4 py-2 rounded">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- <section class="features py-10 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-start text-gray-800 mb-8" data-aos="fade-up">Venue Features & Policies</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-100 rounded-lg p-6 flex items-start" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-chair text-3xl text-[#b64931] mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Seating Type</h3>
+                            <p class="text-gray-600">Indoor Seating</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6 flex items-start" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-paint-brush text-3xl text-[#b64931] mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Decorator</h3>
+                            <p class="text-gray-600">Outside Decor Permitted</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6 flex items-start" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-glass-cheers text-3xl text-[#b64931] mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Alcohol</h3>
+                            <p class="text-gray-600">In House Alcohol Not Available</p>
+                            <p class="text-gray-600">Outside Alcohol Not Permitted</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6 flex items-start" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-utensils text-3xl text-[#b64931] mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Food & Drinks</h3>
+                            <p class="text-gray-600">Outside Caterer Allowed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <section class="tera object-center">
+            <img src="Assets/img/Banners/CSR.png" alt="" srcset="" class="object-cover object-bottom">
+        </section>
+        <!-- New Sections for Our Initiatives -->
+        <section class="schools py-16 bg-gray-100" id="Education" data-aos="fade-up">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Schools</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Rural Education Project</h3>
+                        <p class="text-gray-600 mb-4">Supporting schools in rural areas to provide quality education to underprivileged children.</p>
+                        <img src="Assets/img/Csr/school/school-1.jpeg" alt="Rural School" class="w-full h-96 object-cover rounded-lg mb-4">
+                        <a href="#" class="text-primary hover:underline">Learn more</a>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Digital Learning Initiative</h3>
+                        <p class="text-gray-600 mb-4">Introducing modern technology and digital resources to enhance learning experiences.</p>
+                        <img src="Assets/img/Csr/school/school-3.jpeg" alt="Digital Learning" class="w-full h-96 object-cover object-right rounded-lg mb-4">
+                        <a href="#" class="text-primary hover:underline">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hospitals py-16 bg-white" id="Hospitals">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Hospitals</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-100 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4">Community Hospital</h3>
+                        <p class="text-gray-600 mb-4">A state-of-the-art hospital providing affordable healthcare services to the local community.</p>
+                        <img src="Assets/img/Csr/Health-Clinic/BhawanPic13.jpg" alt="Community Hospital" class="w-full h-96 object-cover rounded-lg mb-4">
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4">Mobile Medical Units</h3>
+                        <p class="text-gray-600 mb-4">Bringing healthcare to remote areas through our fleet of mobile medical units.</p>
+                        <img src="Assets/img/Csr/Health-Clinic/BhawanPic15.jpg" alt="Mobile Medical Unit" class="w-full h-96 object-cover rounded-lg mb-4">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="environmental-initiatives py-16 bg-[url('Assets/img/bg.jpg')]">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-white mb-8">Environmental Initiatives</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Tree Plantation Drives</h3>
+                        <p class="text-gray-600 mb-4">Regular tree plantation campaigns to increase green cover in urban and rural areas.</p>
+                        <img src="Assets/img/tree-plantation.jpg" alt="Tree Plantation Drive" class="w-full h-40 object-cover rounded-lg mb-4">
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Waste Management Program</h3>
+                        <p class="text-gray-600 mb-4">Implementing effective waste segregation and recycling practices in communities.</p>
+                        <img src="Assets/img/waste-management.jpg" alt="Waste Management Program" class="w-full h-40 object-cover rounded-lg mb-4">
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Clean Water Projects</h3>
+                        <p class="text-gray-600 mb-4">Providing clean drinking water solutions to villages and urban slums.</p>
+                        <img src="Assets/img/clean-water.jpg" alt="Clean Water Project" class="w-full h-40 object-cover rounded-lg mb-4">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="health-camps py-16 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Health Camps</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Eye Care Camps</h3>
+                        <p class="text-gray-600 mb-4">Regular eye check-ups and cataract surgeries for those in need.</p>
+                        <img src="Assets/img/Csr/Health-Clinic/BhawanPic15.jpg" alt="Eye Care Camp" class="w-full h-40 object-cover rounded-lg mb-4">
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Dental Health Camps</h3>
+                        <p class="text-gray-600 mb-4">Free dental check-ups and treatments in underserved areas.</p>
+                        <img src="Assets/img/Csr/Health-Clinic/WhatsApp Image 2024-10-23 at 9.38.27 PM.jpeg" alt="Dental Health Camp" class="w-full h-40 object-cover rounded-lg mb-4">
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Women's Health Camps</h3>
+                        <p class="text-gray-600 mb-4">Specialized health camps focusing on women's health issues.</p>
+                        <img src="Assets/img/Csr/Health-Clinic/BhawanPic14.jpg" alt="Women's Health Camp" class="w-full h-40 object-cover rounded-lg mb-4">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="community-centres py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Community Centres</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-100 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4">Terapanth Bhavan</h3>
+                        <p class="text-gray-600 mb-4">Center for community, social events</p>
+                        <img src="Assets/img/GT.jpg" alt="Terapanth" class="w-full h-96 object-cover rounded-lg mb-4">
+                        <a href="#" class="text-primary hover:underline">Learn more</a>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4">Senior Citizen Support Centre</h3>
+                        <p class="text-gray-600 mb-4">A dedicated space for elderly care, activities, and support services.</p>
+                        <img src="Assets/img/senior-citizen-centre.jpg" alt="Senior Citizen Support Centre" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <a href="#" class="text-primary hover:underline">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta bg-white text-black">
+            <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between">
+                <div class="text-center md:text-left md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+                    <h2 class="text-3xl font-bold text-black mb-4">Visit Us Today</h2>
+                    <p class="text-xl text-gray-700 mb-8">Experience the serenity and community at Terapanth Bhavan</p>
+                    <a href="#" class="bg-[#b64931] text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300 inline-block">Contact Us</a>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="relative">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.2176700206477!2d72.85659731490722!3d19.20984985259031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7025d2d0d8f%3A0x5a7eda2266210a13!2sTerapanth%20Bhavan!5e0!3m2!1sen!2sin!4v1623456789012!5m2!1sen!2sin" 
+                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg shadow-md"></iframe>
+                        <div class="mt-4 flex justify-between">
+                            <a href="https://goo.gl/maps/your-directions-link-here" target="_blank" class="bg-[#b64931] text-white py-2 px-4 rounded-full text-sm font-semibold hover:bg-opacity-90 transition duration-300"><i class="fa-solid fa-diamond-turn-right"></i> Get Directions</a>
+                            <a href="https://goo.gl/maps/your-view-on-map-link-here" target="_blank" class="bg-[#b64931] text-white py-2 px-4 rounded-full text-sm font-semibold hover:bg-opacity-90 transition duration-300"><i class="fa-solid fa-map-location-dot"></i> View on Map</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 py-8">
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold mb-4">About Us</h3>
+                    <img src="Assets/img/TULSI-LOGO.png" alt="Terapanth Bhavan Logo" class="w-32 h-auto mb-4">
+                    <p class="text-sm">Terapanth Bhavan</p>
+                    <p class="text-sm">Shri Tulsi Mahapragya Foundation</p>
+                    <p class="text-sm">Kandivali East, Mumbai</p>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold mb-4">Navigation</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-400 transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-gray-400 transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-gray-400 transition-colors">Services</a></li>
+                        <li><a href="#" class="hover:text-gray-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold mb-4">Useful Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-400 transition-colors">Banquet Halls in Mumbai</a></li>
+                        <li><a href="#" class="hover:text-gray-400 transition-colors">Marriage Hall in Mumbai</a></li>
+                        <li><a href="#" class="hover:text-gray-400 transition-colors">Event Spaces in Kandivali</a></li>
+                        <li><a href="#" class="hover:text-gray-400 transition-colors">Community Centers in Mumbai</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-gray-400 transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-gray-400 transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-2xl hover:text-gray-400 transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-2xl hover:text-gray-400 transition-colors"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </footer>
+    <div class="footer-bottom bg-[#b64931] ">
+        <div class=" container mx-auto p-2 text-center flex flex-col md:flex-row justify-between items-center">
+        <p class="text-sm  text-white">&copy; 2024 Shri Tulsi Mahapragya Foundation. All rights reserved.</p>
+
+        <p class="text-gray-300">Developed by <a href="https://www.Digitaledgetech.in/" target="_blank"><strong class="font-light text-white">Digital Edge Technologies </strong></a></p>
+        </div>
+        
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+   
+    <script>
+        // Initialize Swiper
+        var swiper = new Swiper('.testimonial-carousel', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Desktop dropdowns
+        const menuButtons = [
+            { button: 'about-menu-button', dropdown: 'about-dropdown', arrow: 'about-arrow' },
+            { button: 'initiatives-menu-button', dropdown: 'initiatives-dropdown', arrow: 'initiatives-arrow' },
+            { button: 'associates-menu-button', dropdown: 'associates-dropdown', arrow: 'associates-arrow' }
+        ];
+        menuButtons.forEach(({ button, dropdown, arrow }) => {
+            const menuButton = document.getElementById(button);
+            const menuDropdown = document.getElementById(dropdown);
+            const menuArrow = document.getElementById(arrow);
+
+            menuButton.addEventListener('click', () => {
+                menuDropdown.classList.toggle('hidden');
+                menuArrow.classList.toggle('rotate-180');
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!menuButton.contains(event.target) && !menuDropdown.contains(event.target)) {
+                    menuDropdown.classList.add('hidden');
+                    menuArrow.classList.remove('rotate-180');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Mobile dropdowns
+        const mobileMenus = [
+            { button: 'about-mobile-menu', dropdown: 'about-mobile-dropdown', arrow: 'about-mobile-arrow' },
+            { button: 'initiatives-mobile-menu', dropdown: 'initiatives-mobile-dropdown', arrow: 'initiatives-mobile-arrow' },
+            { button: 'associates-mobile-menu', dropdown: 'associates-mobile-dropdown', arrow: 'associates-mobile-arrow' }
+        ];
+        mobileMenus.forEach(({ button, dropdown, arrow }) => {
+            const mobileButton = document.getElementById(button);
+            const mobileDropdown = document.getElementById(dropdown);
+            const mobileArrow = document.getElementById(arrow);
+
+            mobileButton.addEventListener('click', () => {
+                mobileDropdown.classList.toggle('hidden');
+                mobileArrow.classList.toggle('rotate-180');
+            });
+        });
+    });
+</script>
+</body>
+</html>

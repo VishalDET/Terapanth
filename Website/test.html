@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Not Found</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+</head>
+<body class="flex justify-center items-center h-screen bg-gradient-to-br from-[#606C5D] via-pink-500 to-[#f12f12] font-sans text-white text-center m-0">
+  <div class="max-w-xl">
+    <img src="pixeltrue-broken-robot-with-error-404-1.svg" alt="404 Not Found">
+    <!-- <h1 class="text-9xl font-bold m-0">404</h1> -->
+    <p class="text-2xl my-2">Oops! The page you're looking for doesn't exist.</p>
+    <p class="py-3"><a href="/" class="text-white hover:text-gray-200 transition-colors bg-transparent font-bold duration-300 p-3 bg-blue-500 rounded-lg ">Go back to Homepage <i class="fa-solid fa-arrow-right p-3"></i></a></p>
+  </div>
+</body>
+<script>
+  // Function to check if the current URL is valid
+  function isValidUrl() {
+    // Add an array of valid URLs for your project
+    const validUrls = ['/', '/home', '/about', '/services', '/contact'];
+    const currentPath = window.location.pathname;
+    return validUrls.includes(currentPath);
+  }
+
+  // Function to show the 404 page
+  function show404Page() {
+    document.body.style.display = 'flex';
+  }
+
+  // Function to redirect to the homepage
+  function redirectToHomepage() {
+    window.location.href = '/';
+  }
+
+  // Check if the current URL is valid
+  if (!isValidUrl()) {
+    // If not valid, show the 404 page
+    show404Page();
+  } else {
+    // If valid, redirect to the homepage
+    redirectToHomepage();
+  }
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<ul class="space-y-4 accounts-tab p-6">
+  <li class="flex items-center space-x-3 hover:scale-105 transform transition duration-300">
+      <i class="fas fa-heart text-gray-800"></i>
+      <a href="#wishlist-tab" class="text-gray-800 tab-link" data-tab="wishlist-tab">Wishlist</a>
+  </li>
+  <li class="flex items-center space-x-3 hover:scale-105 transform transition duration-300">
+      <i class="fas fa-box text-gray-800"></i>
+      <a href="#orders-tab" class="text-gray-800 tab-link" data-tab="orders-tab">Orders</a>
+  </li>
+  <li class="flex items-center space-x-3 hover:scale-105 transform transition duration-300">
+      <i class="fas fa-history text-gray-800"></i>
+      <a href="#history-tab" class="text-gray-800 tab-link" data-tab="history-tab">History</a>
+  </li>
+  <li class="flex items-center space-x-3 hover:scale-105 transform transition duration-300">
+      <i class="fas fa-map-marker-alt text-gray-800"></i>
+      <a href="#addresses-tab" class="text-gray-800 tab-link" data-tab="addresses-tab">Addresses</a>
+  </li>
+  <li class="flex items-center space-x-3 hover:scale-105 transform transition duration-300">
+      <i class="fas fa-user-circle text-lg text-gray-800"></i>
+      <a href="#account-tab" class="text-gray-800 tab-link" data-tab="account-tab">Account details</a>
+  </li>
+  <li class="flex items-center space-x-3 hover:scale-105 transform transition duration-300">
+      <i class="fas fa-sign-out-alt text-lg text-gray-800"></i>
+      <a href="#logout-tab" class="text-gray-800 tab-link" data-tab="logout-tab">Log out</a>
+  </li>
+</ul>
+<div class="w-3/4">
+  <div id="dashboard-tab" class="tab-content p-6 hidden">
+      <h2 class="text-2xl font-semibold mb-4">Dashboard</h2>
+      <p>Welcome to your account dashboard. Here you can view your recent activity, manage your account settings, and more.</p>
+  </div>
+
+  <div id="wishlist-tab" class="tab-content p-6">
+      <h2 class="text-2xl font-semibold mb-4">Wishlist</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
+              <div class="relative">
+                  <div class="absolute top-2 left-2 bg-orange-500 text-white py-1 px-2 text-xs rounded">Sale</div>
+                  <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+              </div>
+              <div class="p-4">
+                  <h3 class="font-semibold text-lg text-gray-900">9CT WHITE GOLD 0.33CT TOTAL DIAMOND ETERNITY</h3>
+                  <div class="flex items-center mt-2">
+                      <span class="text-gray-600 line-through mr-2">₹299.00</span>
+                      <span class="text-orange-500 font-semibold">₹245.00</span>
+                  </div>
+                  <button class="mt-4 bg-orange-500 text-white py-2 px-4 rounded-full w-full">Add to cart</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div id="orders-tab" class="tab-content p-6 hidden">
+      <h2 class="text-2xl font-semibold mb-4">Orders</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
+              <div class="relative">
+                  <div class="absolute top-2 left-2 bg-orange-500 text-white py-1 px-2 text-xs rounded">Sale</div>
+                  <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+              </div>
+              <div class="p-4">
+                  <h3 class="font-semibold text-lg text-gray-900">9CT WHITE GOLD 0.33CT TOTAL DIAMOND ETERNITY</h3>
+                  <div class="flex items-center mt-2">
+                      <span class="text-gray-600 line-through mr-2">₹299.00</span>
+                      <span class="text-orange-500 font-semibold">₹245.00</span>
+                  </div>
+                  <button class="mt-4 bg-orange-500 text-white py-2 px-4 rounded-full w-full">Add to cart</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div id="history-tab" class="tab-content p-6 hidden">
+      <h2 class="text-2xl font-semibold mb-4">History</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
+              <div class="relative">
+                  <div class="absolute top-2 left-2 bg-orange-500 text-white py-1 px-2 text-xs rounded">Sale</div>
+                  <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+              </div>
+              <div class="p-4">
+                  <h3 class="font-semibold text-lg text-gray-900">9CT WHITE GOLD 0.33CT TOTAL DIAMOND ETERNITY</h3>
+                  <div class="flex items-center mt-2">
+                      <span class="text-gray-600 line-through mr-2">₹299.00</span>
+                      <span class="text-orange-500 font-semibold">₹245.00</span>
+                  </div>
+                  <button class="mt-4 bg-orange-500 text-white py-2 px-4 rounded-full w-full">Add to cart</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div id="addresses-tab" class="tab-content p-6 hidden">
+      <h2 class="text-2xl font-semibold mb-4">Addresses</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
+              <div class="relative">
+                  <div class="absolute top-2 left-2 bg-orange-500 text-white py-1 px-2 text-xs rounded">Sale</div>
+                  <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+              </div>
+              <div class="p-4">
+                  <h3 class="font-semibold text-lg text-gray-900">9CT WHITE GOLD 0.33CT TOTAL DIAMOND ETERNITY</h3>
+                  <div class="flex items-center mt-2">
+                      <span class="text-gray-600 line-through mr-2">₹299.00</span>
+                      <span class="text-orange-500 font-semibold">₹245.00</span>
+                  </div>
+                  <button class="mt-4 bg-orange-500 text-white py-2 px-4 rounded-full w-full">Add to cart</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div id="account-tab" class="tab-content p-6 hidden">
+      <h2 class="text-2xl font-semibold mb-4">Account Details</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
+              <div class="relative">
+                  <div class="absolute top-2 left-2 bg-orange-500 text-white py-1 px-2 text-xs rounded">Sale</div>
+                  <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+              </div>
+              <div class="p-4">
+                  <h3 class="font-semibold text-lg text-gray-900">9CT WHITE GOLD 0.33CT TOTAL DIAMOND ETERNITY</h3>
+                  <div class="flex items-center mt-2">
+                      <span class="text-gray-600 line-through mr-2">₹299.00</span>
+                      <span class="text-orange-500 font-semibold">₹245.00</span>
+                  </div>
+                  <button class="mt-4 bg-orange-500 text-white py-2 px-4 rounded-full w-full">Add to cart</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div id="logout-tab" class="tab-content p-6 hidden">
+      <h2 class="text-2xl font-semibold mb-4">Log Out</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
+              <div class="relative">
+                  <div class="absolute top-2 left-2 bg-orange-500 text-white py-1 px-2 text-xs rounded">Sale</div>
+                  <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+              </div>
+              <div class="p-4">
+                  <h3 class="font-semibold text-lg text-gray-900">9CT WHITE GOLD 0.33CT TOTAL DIAMOND ETERNITY</h3>
+                  <div class="flex items-center mt-2">
+                      <span class="text-gray-600 line-through mr-2">₹299.00</span>
+                      <span class="text-orange-500 font-semibold">₹245.00</span>
+                  </div>
+                  <button class="mt-4 bg-orange-500 text-white py-2 px-4 rounded-full w-full">Add to cart</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+@section Scripts {
+  <script>
+      // JavaScript for Tab Navigation
+      const tabs = document.querySelectorAll('.tab-link');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabs.forEach(tab => {
+          tab.addEventListener('click', (event) => {
+              event.preventDefault(); // Prevent default anchor click behavior
+              
+              tabs.forEach(t => {
+                  t.classList.remove('active-tab', 'active-tab-link');
+                  const parentLi = t.closest('li');
+                  if (parentLi) {
+                      parentLi.classList.remove('active-tab-link');
+                  }
+              });
+
+              tab.classList.add('active-tab', 'active-tab-link');
+              const parentLi = tab.closest('li');
+              if (parentLi) {
+                  parentLi.classList.add('active-tab-link');
+              }
+
+              tabContents.forEach(content => {
+                  content.classList.add('hidden');
+                  content.classList.add('transition', 'duration-500', 'ease-in-out');
+              });
+
+              const target = document.getElementById(tab.getAttribute('data-tab'));
+              target.classList.remove('hidden');
+              target.classList.add('transition', 'duration-500', 'ease-in-out');
+          });
+      });
+  </script>
+}
+
+
+<div class="mt-6 flex flex-col md:flex-row gap-6">
+  <div class="max-w-sm mx-auto bg-white p-6 rounded-lg shadow-lg flex-1">
+      <h3 class="font-semibold text-xl mb-4 text-gray-800">Payment Details</h3>
+      <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex justify-between"><span>Gold Plated Necklace</span> <span>₹1,500</span></li>
+          <li class="flex justify-between"><span>Diamond Earrings</span> <span>₹3,200</span></li>
+          <li class="flex justify-between"><span>Silver Bracelet</span> <span>₹1,800</span></li>
+          <li class="flex justify-between"><span>Rose Gold Ring</span> <span>₹2,400</span></li>
+          <li class="flex justify-between"><span>Emerald Pendant</span> <span>₹4,500</span></li>
+          <li class="flex justify-between text-green-600"><span>Coupon Savings</span> <span>-₹1,000</span></li>
+          <li class="flex justify-between"><span>Delivery</span> <span>₹150</span></li>
+      </ul>
+      <div class="border-t border-gray-300 mt-4 pt-2">
+          <p class="font-bold text-lg text-gray-800 flex justify-between">
+              <span>Total</span>
+              <span>₹12,550</span>
+          </p>
+      </div>
+  </div>
+  <div class="flex flex-col gap-6 flex-1">
+      <!-- Delivery Address Card -->
+      <div class="max-w-sm mx-auto bg-white p-6 rounded-lg shadow-lg h-auto">
+          <h3 class="font-semibold text-xl mb-4 text-gray-800">Delivery Address</h3>
+          <p class="text-sm text-gray-600">
+              32 Road, Dr. Roy Road<br>
+              Simple Avenue, ABC Plaza, Worli, Mumbai<br>
+              123400
+          </p>
+      </div>
+
+      <!-- Customer Service Card -->
+      <div class="max-w-sm mx-auto bg-white p-6 rounded-lg shadow-lg h-auto">
+          <h3 class="font-semibold text-xl mb-4 text-gray-800">Customer Service</h3>
+          <p class="text-sm text-gray-600">
+              Having trouble with this order? We're here to help!<br>
+              You can contact us at <span class="font-semibold">support@yourstore.com</span> or call us at <span class="font-semibold">+91-1234567890</span>.
+          </p>
+      </div>
+  </div>
+</div>
+
+
+<aside class="w-full md:w-1/5 space-y-6 cat-left-side rounded p-5 cat-aside">
+  <details>
+      <summary class="font-semibold text-lg mb-4 flex justify-between items-center">
+          <span>CATEGORIES</span>
+          <span class="ml-2">
+              <i class="fas fa-chevron-right"></i>
+          </span>
+      </summary>
+      <ul class="space-y-2">
+          <li class="flex justify-between items-center">
+              <a href="#" class="text-gray-800 hover:text-sira-red">Bracelets</a>
+              <span class="text-gray-500">(9)</span>
+          </li>
+          <li class="flex justify-between items-center">
+              <a href="#" class="text-gray-800 hover:text-sira-red">Earrings</a>
+              <span class="text-gray-500">(4)</span>
+          </li>
+          <li class="flex justify-between items-center">
+              <a href="#" class="text-gray-800 hover:text-sira-red">Necklaces</a>
+              <span class="text-gray-500">(3)</span>
+          </li>
+          <li class="flex justify-between items-center">
+              <a href="#" class="text-gray-800 hover:text-sira-red">Rings</a>
+              <span class="text-gray-500">(2)</span>
+          </li>
+          <li class="flex justify-between items-center">
+              <a href="#" class="text-gray-800 hover:text-sira-red">Wedding & Bridal</a>
+              <span class="text-gray-500">(4)</span>
+          </li>
+      </ul>
+  </details>
+
+  <details>
+      <summary class="font-semibold text-lg mb-4 flex justify-between items-center">
+          <span>PRICE</span>
+          <span class="ml-2">
+              <i class="fas fa-chevron-right"></i>
+          </span>
+      </summary>
+      <div class="flex flex-col space-y-2">
+          <input type="range" min="0" max="100" value="50" class="w-full range-slider">
+          <div class="flex justify-between text-sm text-gray-700">
+              <span>₹0</span>
+              <span>₹10000</span>
+          </div>
+      </div>
+  </details>
+
+  <details>
+      <summary class="font-semibold text-lg mb-4 flex justify-between items-center">
+          <span>COLOR</span>
+          <span class="ml-2">
+              <i class="fas fa-chevron-right"></i>
+          </span>
+      </summary>
+      <ul class="space-y-2">
+          <li class="flex justify-between items-center">
+              <span class="flex items-center">
+                  <span class="w-5 h-5 rounded-full bg-[#D2B48C] border border-gray-300 mr-2"></span> Antique
+              </span>
+              <span class="text-gray-500">(3)</span>
+          </li>
+          <li class="flex justify-between items-center">
+              <span class="flex items-center">
+                  <span class="w-5 h-5 rounded-full bg-[#E3DAC9] border border-gray-300 mr-2"></span> Bone
+              </span>
+              <span class="text-gray-500">(2)</span>
+          </li>
+          <li class="flex justify-between items-center">
+              <span class="flex items-center">
+                  <span class="w-5 h-5 rounded-full bg-[#D2691E] border border-gray-300 mr-2"></span> Chestnut
+              </span>
+              <span class="text-gray-500">(5)</span>
+          </li>
+          <li class="flex justify-between items-center">
+              <span class="flex items-center">
+                  <span class="w-5 h-5 rounded-full bg-[#DC143C] border border-gray-300 mr-2"></span> Crimson
+              </span>
+              <span class="text-gray-500">(8)</span>
+          </li>
+          <li class="flex justify-between items-center">
+              <span class="flex items-center">
+                  <span class="w-5 h-5 rounded-full bg-[#F3F1E7] border border-gray-300 mr-2"></span> Eggshell
+              </span>
+              <span class="text-gray-500">(3)</span>
+          </li>
+          <li class="flex justify-between items-center">
+              <span class="flex items-center">
+                  <span class="w-5 h-5 rounded-full bg-[#A9A9A9] border border-gray-300 mr-2"></span> Grullo
+              </span>
+              <span class="text-gray-500">(4)</span>
+          </li>
+      </ul>
+  </details>
+
+  <details>
+      <summary class="font-semibold text-lg mt-8 mb-4 flex justify-between items-center">
+          <span>SIZE</span>
+          <span class="ml-2">
+              <i class="fas fa-chevron-right"></i>
+          </span>
+      </summary>
+      <ul class="space-y-2 cat-sizes">
+          <li class="flex items-center">
+              <input type="checkbox" id="size-small" class="mr-2">
+              <label for="size-small" class="text-gray-700">26</label>
+          </li>
+          <li class="flex items-center">
+              <input type="checkbox" id="size-medium" class="mr-2">
+              <label for="size-medium" class="text-gray-700">30</label>
+          </li>
+          <li class="flex items-center">
+              <input type="checkbox" id="size-large" class="mr-2">
+              <label for="size-large" class="text-gray-700">28</label>
+          </li>
+          <li class="flex items-center">
+              <input type="checkbox" id="size-xlarge" class="mr-2">
+              <label for="size-xlarge" class="text-gray-700">32</label>
+          </li>
+          <li class="flex items-center">
+              <input type="checkbox" id="size-xxlarge" class="mr-2">
+              <label for="size-xxlarge" class="text-gray-700">38</label>
+          </li>
+      </ul>
+  </details>
+</aside>
+
+
+<div class="px-5 flex flex-col overflow-x-auto gap-4">
+  <div class="relative" data-aos="fade-up" data-aos-delay="300">
+      <video class="w-full h-auto object-cover rounded-lg" autoplay loop muted>
+          <source src="~/video/reels/r7.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      <div class="absolute inset-0 flex justify-center items-end bg-black bg-opacity-10 rounded-lg">
+          <span class="text-white text-sm">SIRA GIFT SET G932</span>
+      </div>
+  </div>
+
+  <div class="relative" data-aos="fade-up" data-aos-delay="500">
+      <video class="w-full h-auto object-cover rounded-lg" autoplay loop muted>
+          <source src="~/video/reels/r2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      <div class="absolute inset-0 flex justify-center items-end bg-black bg-opacity-10 rounded-lg">
+          <span class="text-white text-xl">SIRA BRIDAL B542</span>
+      </div>
+  </div>
+
+  <div class="relative" data-aos="fade-up" data-aos-delay="700">
+      <video class="w-full h-auto object-cover rounded-lg" autoplay loop muted>
+          <source src="~/video/reels/r3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      <div class="absolute inset-0 flex justify-center items-end bg-black bg-opacity-10 rounded-lg">
+          <span class="text-white text-xl">SIRA NOSE RING R395</span>
+      </div>
+  </div>
+
+  <div class="relative" data-aos="fade-up" data-aos-delay="900">
+      <video class="w-full h-auto object-cover rounded-lg" autoplay loop muted>
+          <source src="~/video/reels/r4.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      <div class="absolute inset-0 flex justify-center items-end bg-black bg-opacity-10 rounded-lg">
+          <span class="text-white text-xl">SIRA BRIDAL COLLECTION B031</span>
+      </div>
+  </div>
+
+  <div class="relative" data-aos="fade-up" data-aos-delay="1200">
+      <video class="w-full h-auto object-cover rounded-lg" autoplay loop muted>
+          <source src="~/video/reels/r6.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      <div class="absolute inset-0 flex justify-center items-end bg-black bg-opacity-10 rounded-lg">
+          <span class="text-white text-xl">SIRA LUXOTTICA L001</span>
+      </div>
+  </div>
+</div>
+
+
+<div class="bg-sira-light-gold py-12">
+  <div class="container mx-auto text-center">
+      <h1 class="text-4xl font-bold text-sira-red mb-4">Get in Touch with Sira Jewellery</h1>
+      <p class="text-gray-700 text-lg">We’re here to assist you. Whether it’s a query, feedback, or a collaboration idea, reach out to us!</p>
+  </div>
+</div>
+
+<!-- Contact Form and Info Section -->
+<div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 md:items-center">
+  <div class="lg:w-1/3 bg-white shadow-lg rounded-lg p-8">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Drop Us a Line</h2>
+      <form action="#" method="POST" class="space-y-6">
+          <div>
+              <label for="name" class="block text-gray-700 font-medium">Name</label>
+              <input type="text" id="name" name="name" required
+                     class="w-full border border-gray-300 rounded-lg focus:ring-sira-red focus:border-sira-red p-3">
+          </div>
+          <div>
+              <label for="email" class="block text-gray-700 font-medium">Email</label>
+              <input type="email" id="email" name="email" required
+                     class="w-full border border-gray-300 rounded-lg focus:ring-sira-red focus:border-sira-red p-3">
+          </div>
+          <div>
+              <label for="subject" class="block text-gray-700 font-medium">Subject</label>
+              <input type="text" id="subject" name="subject" required
+                     class="w-full border border-gray-300 rounded-lg focus:ring-sira-red focus:border-sira-red p-3">
+          </div>
+          <div>
+              <label for="message" class="block text-gray-700 font-medium">Message</label>
+              <textarea id="message" name="message" rows="5" required
+                        class="w-full border border-gray-300 rounded-lg focus:ring-sira-red focus:border-sira-red p-3"></textarea>
+          </div>
+          <div>
+              <button type="submit"
+                      class="w-full bg-sira-red text-white font-bold py-3 rounded-lg hover:bg-sira-gold transition">
+                  Send Message
+              </button>
+          </div>
+      </form>
+  </div>
+
+  <div class="lg:w-2/3 flex flex-col justify-center gap-4">
+      <div class="rounded-lg shadow-lg h-96 w-full">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345098644!2d144.96305761586523!3d-37.813627742345215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce7e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sin!4v1637308537324!5m2!1sen!2sin"
+                  class="w-full h-full border-0" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div class="bg-white shadow-lg rounded-lg p-8 w-full">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Contact Details</h2>
+          <p class="text-gray-700 mb-6">Here’s how you can get in touch with us directly:</p>
+          <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                  <i class="fas fa-phone-alt text-sira-red text-2xl"></i>
+                  <div>
+                      <p class="text-gray-800 font-medium">Phone</p>
+                      <p class="text-gray-600">+91 98765 43210</p>
+                  </div>
+              </div>
+              <div class="flex items-start gap-4">
+                  <i class="fas fa-envelope text-sira-red text-2xl"></i>
+                  <div>
+                      <p class="text-gray-800 font-medium">Email</p>
+                      <p class="text-gray-600">support@sirajewellery.com</p>
+                  </div>
+              </div>
+              <div class="flex items-start gap-4">
+                  <i class="fas fa-map-marker-alt text-sira-red text-2xl"></i>
+                  <div>
+                      <p class="text-gray-800 font-medium">Address</p>
+                      <p class="text-gray-600">123, Sira Lane, Goldsmith Street,<br>New Delhi, India</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="mt-8">
+              <h3 class="text-gray-800 font-bold mb-2">Follow Us</h3>
+              <div class="flex space-x-4">
+                  <a href="#" class="text-sira-red hover:text-sira-gold text-2xl"><i class="fab fa-facebook"></i></a>
+                  <a href="#" class="text-sira-red hover:text-sira-gold text-2xl"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="text-sira-red hover:text-sira-gold text-2xl"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="text-sira-red hover:text-sira-gold text-2xl"><i class="fab fa-pinterest"></i></a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="bg-gray-50 py-16 px-8">
+  <!-- Top Section -->
+  <div class="text-center">
+      <div class="inline-block bg-pink-100 text-pink-600 px-4 py-1 text-sm rounded-full mb-4">About Us!</div>
+      <h1 class="text-4xl font-bold text-gray-800">Providing <span class="text-pink-600">Quality Jewellery</span></h1>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          Where we offer exquisite and personalized jewellery pieces to help you shine on every occasion.
+      </p>
+  </div>
+
+  <!-- Stats Section -->
+  <div class="flex justify-center mt-12 space-x-12">
+      <!-- Stat 1 -->
+      <div class="bg-white shadow-md rounded-lg p-6 text-center">
+          <h2 class="text-3xl font-bold text-pink-600">1,000+</h2>
+          <p class="text-gray-600 mt-2">Happy Customers</p>
+      </div>
+      <!-- Stat 2 -->
+      <div class="bg-white shadow-md rounded-lg p-6 text-center">
+          <h2 class="text-3xl font-bold text-pink-600">500+</h2>
+          <p class="text-gray-600 mt-2">Unique Designs</p>
+      </div>
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="mt-16 flex flex-wrap items-center">
+      <!-- Text Content -->
+      <div class="w-full md:w-1/2 space-y-4">
+          <div class="inline-block bg-pink-100 text-pink-600 px-4 py-1 text-sm rounded-full">Timeless!</div>
+          <h2 class="text-4xl font-bold text-gray-800 leading-tight">
+              Providing Quality Jewellery Since 1990
+          </h2>
+          <p class="text-gray-600">
+              At Sira Jewellery, we are dedicated to crafting exceptional pieces that enhance your beauty and style.
+              Our mission is to provide unique and personalized jewellery, while our vision is to be the leading brand in elegance and craftsmanship. 
+              We are guided by our core values of quality, creativity, and customer satisfaction.
+          </p>
+          <div class="mt-4 space-x-4">
+              <button class="bg-pink-600 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-pink-700 transition">Shop Now</button>
+              <button class="border border-pink-600 text-pink-600 px-6 py-2 rounded-lg hover:bg-pink-100 transition">Learn More</button>
+          </div>
+      </div>
+
+      <!-- Image Section -->
+      <div class="w-full md:w-1/2 flex justify-center relative mt-8 md:mt-0">
+          <div class="absolute bg-pink-200 rounded-lg w-64 h-64 -top-8 -right-8"></div>
+          <img src="https://via.placeholder.com/300" alt="Jewellery Services" class="rounded-lg z-10">
+      </div>
+  </div>
+</div>
+
+<div class="bg-white shadow-lg rounded-lg relative overflow-hidden text-center transition hover:shadow-xl w-[95%]">
+  <img src="~/img/Models/16.webp" alt="Designer Image" class="w-full h-full object-cover">
+  <div class="py-3 px-4 w-full flex justify-between absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-ivory rounded-xl">
+      <div class="flex flex-col text-start">
+          <h3 class="text-md font-semibold text-gray-800">Ms. NINOMITRA SAHAY</h3>
+          <p class="text-sira-red font-sm mb-1 text-start font-semibold">Master Jeweller</p>
+      </div>
+      <div class="flex flex-col justify-top space-x-3 items-bottom">
+          <p class="text-gray-500">Follow</p>
+          <div class="flex gap-2">
+              <a href="#" class="text-gray-600 hover:text-sira-red text-xl"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="text-gray-600 hover:text-sira-red text-xl"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-gray-600 hover:text-sira-red text-xl"><i class="fab fa-twitter"></i></a>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="flex overflow-x-auto md:space-x-4 py-4 md:justify-center gap-3 md:gap-2 cat-home px-2 md:px-0">
+  <div class="flex flex-col items-center">
+      <img src="~/img/icons/icons8-rings-100.png" alt="Rings" class="w-auto h-auto mb-2" />
+      <span class="text-sm font-semibold">RINGS</span>
+  </div>
+  <div class="flex flex-col items-center">
+      <img src="~/img/icons/icons8-bracelet-100.png" alt="Bracelet" class="w-auto h-auto mb-2">
+      <span class="text-sm font-semibold">BRACELET</span>
+  </div>
+  <div class="flex flex-col items-center">
+      <img src="~/img/icons/icons8-necklace-100.png" alt="Necklace" class="w-auto h-auto mb-2">
+      <span class="text-sm font-semibold">NECKLACE</span>
+  </div>
+  <div class="flex flex-col items-center">
+      <img src="~/img/icons/icons8-bangles-100.png" alt="Chain" class="w-auto h-auto mb-2">
+      <span class="text-sm font-semibold">BANGLES</span>
+  </div>
+  <div class="flex flex-col items-center">
+      <img src="~/img/icons/icons8-choker-100.png" alt="Choker" class="w-auto h-auto mb-2">
+      <span class="text-sm font-semibold">CHOKER</span>
+  </div>
+  <div class="flex flex-col items-center">
+      <img src="~/img/icons/icons8-earring-100.png" alt="Earrings" class="w-auto h-auto mb-2">
+      <span class="text-sm font-semibold">EARRINGS</span>
+  </div>
+  <div class="flex flex-col items-center">
+      <img src="~/img/icons/icons8-gemstone-100.png" alt="Gemstone" class="w-auto h-auto mb-2">
+      <span class="text-sm font-semibold">GEMSTONE</span>
+  </div>
+  <div class="flex flex-col items-center">
+      <img src="~/img/icons/icons8-gift-box-100.png" alt="Gift Set" class="w-auto h-auto mb-2">
+      <span class="text-sm font-semibold">GIFT SET</span>
+  </div>
+</div>
