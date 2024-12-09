@@ -115,3 +115,25 @@ width: 100%;
 .sidebar-open {
     transform: translateX(0);
 }
+.blur{
+    background-color: #b64931;
+    backdrop-filter: blur(0px);
+}
+#mobile-menu {
+    transform: translateX(100%); /* Move the menu off-screen to the right */
+    transition: transform 0.3s ease-in-out; /* Smooth sliding effect */
+}
+
+/* When the menu is open, slide it in from the right */
+#mobile-menu.open {
+    transform: translateX(0); /* Move the menu to its normal position */
+}
+
+/* Close button styling */
+#mobile-menu .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
